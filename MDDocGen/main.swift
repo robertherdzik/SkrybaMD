@@ -47,7 +47,7 @@ struct Doc {
 protocol FileIORepositoring {
     func fetchDocumentShape() -> String
     func fetchFileContent(from fileName: String) -> String
-    func saveDocumentationOutputFile(with content: String)
+    func saveDocumentationOutputFile(with content: String, documentName: String?)
 }
 
 struct FileIORepository: FileIORepositoring {
@@ -67,9 +67,9 @@ struct FileIORepository: FileIORepositoring {
         return try! String(contentsOfFile: path, encoding: String.Encoding.utf8)
     }
     
-    func saveDocumentationOutputFile(with content: String) {
-        let fileName = "Documentation.md"
-        let path = fileManager.currentDirectoryPath + "/" + fileName
+    func saveDocumentationOutputFile(with content: String, documentName: String?) {
+        let fileName = documentName ?? "StyleGuide"
+        let path = fileManager.currentDirectoryPath + "/" + fileName + ".md"
         
         printProcessLogs(with: "Documentation generated and saved at: \(Constant.newLine)🦠 ➡️ \(path)")
         
@@ -319,12 +319,12 @@ struct DocumentPrinter {
 //------------------------------------------------
 
 protocol OutputPrinting {
-    static func printOutput(content: String)
+    static func printOutput(content: String, documentName: String?)
 }
 
 struct ConsolePrinter: OutputPrinting {
     
-    static func printOutput(content: String) {
+    static func printOutput(content: String, documentName: String? = nil) {
         print(content)
     }
 }
@@ -332,25 +332,44 @@ struct ConsolePrinter: OutputPrinting {
 struct FilePrinter: OutputPrinting {
     static private let fileRepository = FileIORepository()
     
-    static func printOutput(content: String) {
-        fileRepository.saveDocumentationOutputFile(with: content)
+    static func printOutput(content: String, documentName: String?) {
+        fileRepository.saveDocumentationOutputFile(with: content, documentName: documentName)
     }
 }
 
 //------------------------------------------------
 
-let generator = Generator()
-let documentShape = FileIORepository().fetchDocumentShape()
-let rootNode = generator.makeNodesLinkedList(from: documentShape)
-let head = Node(intent: "", title: "", content: "")
-head.nextSiblingNode = rootNode
+func generate(fileName: String?) {
+    let generator = Generator()
+       let documentShape = FileIORepository().fetchDocumentShape()
+       let rootNode = generator.makeNodesLinkedList(from: documentShape)
+       let head = Node(intent: "", title: "", content: "")
+       head.nextSiblingNode = rootNode
 
-let tableOfContent = generator.printTitles(from: head, base: "")
-let content = generator.printContent(from: head, base: "")
-let document = Doc(tableOfContent: tableOfContent,
-                   content: content)
+       let tableOfContent = generator.printTitles(from: head, base: "")
+       let content = generator.printContent(from: head, base: "")
+       let document = Doc(tableOfContent: tableOfContent,
+                          content: content)
 
-DocumentPrinter.print(doc: document,
-                      printerOutput: FilePrinter.printOutput)
+       DocumentPrinter.print(doc: document) { content in
+           FilePrinter.printOutput(content: content, documentName: fileName)
+       }
+}
 
+let arguments = CommandLine.arguments
+
+// >> $ ./MDDocGen StyleGuide.md
+if arguments.count > 1 {
+    let fileName = arguments[1]
+    
+    switch fileName {
+    case "--help", "-h":
+        print("📝 Run script and file name as a first parameter e.g.: >> $ ./MDDocGen StyleGuide.md")
+    default:
+        generate(fileName: fileName)
+    }
+    
+} else {
+    generate(fileName: nil)
+}
 
