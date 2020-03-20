@@ -23,7 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B1FAE46C23F85A4600D6F5A2 /* MDDocGen */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MDDocGen; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1FAE46C23F85A4600D6F5A2 /* SkrybaMD */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SkrybaMD; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1FAE46F23F85A4600D6F5A2 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -41,7 +41,7 @@
 		B1FAE46323F85A4500D6F5A2 = {
 			isa = PBXGroup;
 			children = (
-				B1FAE46E23F85A4600D6F5A2 /* MDDocGen */,
+				B1FAE46E23F85A4600D6F5A2 /* SkrybaMD */,
 				B1FAE46D23F85A4600D6F5A2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,25 +49,25 @@
 		B1FAE46D23F85A4600D6F5A2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B1FAE46C23F85A4600D6F5A2 /* MDDocGen */,
+				B1FAE46C23F85A4600D6F5A2 /* SkrybaMD */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B1FAE46E23F85A4600D6F5A2 /* MDDocGen */ = {
+		B1FAE46E23F85A4600D6F5A2 /* SkrybaMD */ = {
 			isa = PBXGroup;
 			children = (
 				B1FAE46F23F85A4600D6F5A2 /* main.swift */,
 			);
-			path = MDDocGen;
+			path = SkrybaMD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B1FAE46B23F85A4600D6F5A2 /* MDDocGen */ = {
+		B1FAE46B23F85A4600D6F5A2 /* SkrybaMD */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B1FAE47323F85A4600D6F5A2 /* Build configuration list for PBXNativeTarget "MDDocGen" */;
+			buildConfigurationList = B1FAE47323F85A4600D6F5A2 /* Build configuration list for PBXNativeTarget "SkrybaMD" */;
 			buildPhases = (
 				B1FAE46823F85A4600D6F5A2 /* Sources */,
 				B1FAE46923F85A4600D6F5A2 /* Frameworks */,
@@ -77,9 +77,9 @@
 			);
 			dependencies = (
 			);
-			name = MDDocGen;
+			name = SkrybaMD;
 			productName = MDDocGen;
-			productReference = B1FAE46C23F85A4600D6F5A2 /* MDDocGen */;
+			productReference = B1FAE46C23F85A4600D6F5A2 /* SkrybaMD */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -97,7 +97,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B1FAE46723F85A4500D6F5A2 /* Build configuration list for PBXProject "MDDocGen" */;
+			buildConfigurationList = B1FAE46723F85A4500D6F5A2 /* Build configuration list for PBXProject "SkrybaMD" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,7 +110,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B1FAE46B23F85A4600D6F5A2 /* MDDocGen */,
+				B1FAE46B23F85A4600D6F5A2 /* SkrybaMD */,
 			);
 		};
 /* End PBXProject section */
@@ -263,7 +263,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B1FAE46723F85A4500D6F5A2 /* Build configuration list for PBXProject "MDDocGen" */ = {
+		B1FAE46723F85A4500D6F5A2 /* Build configuration list for PBXProject "SkrybaMD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B1FAE47123F85A4600D6F5A2 /* Debug */,
@@ -272,7 +272,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B1FAE47323F85A4600D6F5A2 /* Build configuration list for PBXNativeTarget "MDDocGen" */ = {
+		B1FAE47323F85A4600D6F5A2 /* Build configuration list for PBXNativeTarget "SkrybaMD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B1FAE47423F85A4600D6F5A2 /* Debug */,
