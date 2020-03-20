@@ -1,15 +1,15 @@
 ## Table Of Content
 
-- [1.0 General](#1.0-general)
-	- [1.1.0 ddd](#1.1.0-ddd)
-- [2.0 Architecture](#2.0-architecture)
-	- [2.1.0 Our Approach](#2.1.0-our-approach)
-		- [2.1.1.0 next point](#2.1.1.0-next-point)
-		- [2.1.2.0 dfsdf](#2.1.2.0-dfsdf)
-			- [2.1.2.1.0 Our Approach Description](#2.1.2.1.0-our-approach-description)
-			- [2.1.2.2.0 Why This One](#2.1.2.2.0-why-this-one)
-			- [2.1.2.3.0 CI and Rest](#2.1.2.3.0-ci-and-rest)
-- [3.0 Summary](#3.0-summary)
+- [1.0 General](#10-general)
+	- [1.1.0 ddd](#110-ddd)
+- [2.0 Architecture](#20-architecture)
+	- [2.1.0 Our Approach](#210-our-approach)
+		- [2.1.1.0 next point](#2110-next-point)
+		- [2.1.2.0 dfsdf](#2120-dfsdf)
+			- [2.1.2.1.0 Our Approach Description](#21210-our-approach-description)
+			- [2.1.2.2.0 Why This One](#21220-why-this-one)
+			- [2.1.2.3.0 CI and Rest](#21230-ci-and-rest)
+- [3.0 Summary](#30-summary)
 
 ##  1.0 General
 This guide was last updated for Swift 4.2 on January 22, 2019.
