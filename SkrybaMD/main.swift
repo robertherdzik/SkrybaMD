@@ -94,7 +94,6 @@ struct Generator {
         self.fileRepository = fileRepository
     }
     
-    
     func makeNodesLinkedList(from text: String) -> Node {
         let nodesFlat = numerate(input: text)
         
@@ -137,12 +136,19 @@ struct Generator {
                 + generateIntent(baseOn: node.intentCount())
                 + Constant.intent
                 + Constant.space
+                + "["
                 + node.index
                 + Constant.space
                 + node.title
+                + "]"
+                + "(#"
+                + node.index
+                + "-"
+                + node.title.replacingOccurrences(of: " ", with: "-").lowercased()
+                + ")"
                 + printTitles(from: node, base: base)
         }
-    
+        
         if let innerNode = node.innerNode {
             return templateFactory(node: innerNode, base: base)
         }
@@ -159,15 +165,15 @@ struct Generator {
                              stertItem: String,
                              isInnerNode: Bool) -> String {
             Constant.newLine
-            + generateIntentForContent(baseOn: node.intentCount(), isInnerNode: isInnerNode)
-            + stertItem
-            + Constant.space
-            + node.index
-            + Constant.space
-            + node.title
-            + Constant.newLine
-            + node.content
-            + printContent(from: node, base: base)
+                + generateIntentForContent(baseOn: node.intentCount(), isInnerNode: isInnerNode)
+                + stertItem
+                + Constant.space
+                + node.index
+                + Constant.space
+                + node.title
+                + Constant.newLine
+                + node.content
+                + printContent(from: node, base: base)
         }
         
         if let innerNode = node.innerNode {
@@ -191,92 +197,101 @@ struct Generator {
     }
     
     private func generateNode(from row: String.SubSequence) -> Node {
-           let rowElements = row.components(separatedBy: Constant.separator)
-           let intent = rowElements.first!.trimmingCharacters(in: .whitespacesAndNewlines)
-           let title = rowElements[1].trimmingCharacters(in: .whitespacesAndNewlines)
-           
-           var contentFileValue: String!
-           if let contentFile = rowElements.last?.trimmingCharacters(in: .whitespacesAndNewlines) {
-               contentFileValue = fileRepository.fetchFileContent(from: contentFile)
-           }
-           
-           return Node(intent: intent,
-                       title: title,
-                       content: contentFileValue)
-       }
-       
-       private func getClosestPrevSiblingNode(from node: Node?, with intent: Int) -> Node? {
-           if let prevSiblingNode = node?.prevSiblingNode {
-               if intent == prevSiblingNode.intent.count {
-                   return prevSiblingNode
-               } else {
-                   return getClosestPrevSiblingNode(from: prevSiblingNode, with: intent)
-               }
-           }
-           
-           return nil
-       }
-       
-       private func makeFlatNodes(from imput: String) -> [Node] {
-           let topicsArr = imput.split(separator: String.Element(Constant.newLine))
-           
-           return topicsArr.map { generateNode(from: $0) }
-       }
-       
-       private func createIndex(from lookupDict: [String: Int]) -> String {
-           let sortedLookup = lookupDict.map { (key: $0, value: $1) }.sorted { $0.key.count < $1.key.count }
-           
-           var result = ""
-           for item in sortedLookup {
-               result += "\(item.value)."
-           }
-           
-           return result + "0"
-       }
-       
-       private func numerate(input: String) -> [Node] {
-           let flatNodes = makeFlatNodes(from: input)
-           
-           var result = [Node]()
-           var lookup: [String: Int] = [:]
-           for i in 0..<(flatNodes.count) {
-               let currentNode = flatNodes[i]
-               var prevNode: Node?
-               if i > 0 {
-                   prevNode = flatNodes[i - 1]
-               }
-               
-               if let prevNoteIntentCount = prevNode?.intentCount() {
-                   if prevNoteIntentCount > currentNode.intentCount() {
-                       let currentIntentCount = currentNode.intentCount()
-                       
-                       // reset lookup till current item intent count
-                       var keysToReset = [String]()
-                       for i in ((currentIntentCount + 1)...prevNoteIntentCount) {
-                           lookup.forEach { key, value in
-                               if key.count == i {
-                                   keysToReset.append(key)
-                               }
-                           }
-                       }
-                       
-                       keysToReset.forEach { lookup.removeValue(forKey: $0) }
-                   }
-               }
-               
-               if lookup[currentNode.intent] != nil {
-                   lookup[currentNode.intent]! += 1
-               } else {
-                   lookup[currentNode.intent] = 1
-               }
-               
-               currentNode.index = createIndex(from: lookup)
-               
-               result.append(currentNode)
-           }
-           
-           return result
-       }
+        let rowElements = row.components(separatedBy: Constant.separator)
+        let intent = rowElements.first!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let title = rowElements[1].trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        var contentFileValue: String!
+        if let contentFile = rowElements.last?.trimmingCharacters(in: .whitespacesAndNewlines) {
+            contentFileValue = fileRepository.fetchFileContent(from: contentFile)
+        }
+        
+        return Node(intent: intent,
+                    title: title,
+                    content: contentFileValue)
+    }
+    
+    private func getClosestPrevSiblingNode(from node: Node?, with intent: Int) -> Node? {
+        if let prevSiblingNode = node?.prevSiblingNode {
+            if intent == prevSiblingNode.intent.count {
+                return prevSiblingNode
+            } else {
+                return getClosestPrevSiblingNode(from: prevSiblingNode, with: intent)
+            }
+        }
+        
+        return nil
+    }
+    
+    private func makeFlatNodes(from imput: String) -> [Node] {
+        let topicsArr = imput.split(separator: String.Element(Constant.newLine))
+        
+        return topicsArr.map { generateNode(from: $0) }
+    }
+    
+    private func createIndex(from lookupDict: [String: Int]) -> String {
+        let sortedLookup = lookupDict.map { (key: $0, value: $1) }.sorted { $0.key.count < $1.key.count }
+        
+        var result = ""
+        for item in sortedLookup {
+            result += "\(item.value)."
+        }
+        
+        return result + "0"
+    }
+    //       - [1. Code Formatting](#1-code-formatting)
+    private func numerate(input: String) -> [Node] {
+        let flatNodes = makeFlatNodes(from: input)
+        
+        var result = [Node]()
+        var lookup: [String: Int] = [:]
+        for i in 0..<(flatNodes.count) {
+            let currentNode = flatNodes[i]
+            var prevNode: Node?
+            if i > 0 {
+                prevNode = flatNodes[i - 1]
+            }
+            
+            if let prevNoteIntentCount = prevNode?.intentCount() {
+                if prevNoteIntentCount > currentNode.intentCount() {
+                    let currentIntentCount = currentNode.intentCount()
+                    
+                    // reset lookup till current item intent count
+                    var keysToReset = [String]()
+                    for i in ((currentIntentCount + 1)...prevNoteIntentCount) {
+                        lookup.forEach { key, value in
+                            if key.count == i {
+                                keysToReset.append(key)
+                            }
+                        }
+                    }
+                    
+                    keysToReset.forEach { lookup.removeValue(forKey: $0) }
+                }
+            }
+            
+            if lookup[currentNode.intent] != nil {
+                lookup[currentNode.intent]! += 1
+            } else {
+                lookup[currentNode.intent] = 1
+            }
+            
+            currentNode.index = createIndex(from: lookup)
+            
+            
+            
+            
+            
+            result.append(currentNode)
+        }
+        
+        return result
+    }
+//
+//    func decorateSubjectWithLink(index: String, nodeTitle: String) -> String {
+//        "["
+//
+//    }
     
     private func generateIntent(baseOn index: Int) -> String {
         String(repeating: Constant.tab, count: index - 1)
@@ -351,19 +366,19 @@ struct FilePrinter: OutputPrinting {
 
 func generate(fileName: String?) {
     let generator = Generator()
-       let documentShape = FileIORepository().fetchDocumentShape()
-       let rootNode = generator.makeNodesLinkedList(from: documentShape)
-       let head = Node(intent: "", title: "", content: "")
-       head.nextSiblingNode = rootNode
-
-       let tableOfContent = generator.printTitles(from: head, base: "")
-       let content = generator.printContent(from: head, base: "")
-       let document = Doc(tableOfContent: tableOfContent,
-                          content: content)
-
-       DocumentPrinter.print(doc: document) { content in
-           FilePrinter.printOutput(content: content, documentName: fileName)
-       }
+    let documentShape = FileIORepository().fetchDocumentShape()
+    let rootNode = generator.makeNodesLinkedList(from: documentShape)
+    let head = Node(intent: "", title: "", content: "")
+    head.nextSiblingNode = rootNode
+    
+    let tableOfContent = generator.printTitles(from: head, base: "")
+    let content = generator.printContent(from: head, base: "")
+    let document = Doc(tableOfContent: tableOfContent,
+                       content: content)
+    
+    DocumentPrinter.print(doc: document) { content in
+        FilePrinter.printOutput(content: content, documentName: fileName)
+    }
 }
 
 //------------------------------------------------
