@@ -57,8 +57,14 @@ ENJOY 🙌
 _NOTE: you can play around with script using "Example" folder from this repository_
 
 # Installation
-`// _TODO [🌶]:`
 
+Using Swift Package Manager
+```
+$ git clone https://github.com/robertherdzik/SkrybaMD.git
+$ cd SkrybaMD
+$ swift build -c release
+$ cp -f .build/release/SkrybaMD /usr/local/bin/SkrybaMD
+```
 
 # TODO
 - [x] create script installation logic (now script need to be build from xcode and copy/paste in the place where source files are located)
