@@ -45,9 +45,14 @@ i || CI and Rest || ci_and_rest.md
 i || Summary || summary.md
 ```
 
+***NOTE*** You can skip subject content file source neme in `doc_shape.txt` file, in result you will get only subject without content in the output file e.g.:
+
+`i || General ||`
+
+
 2. **Create files content for each subject**
 
-Create source .md file for each Subject in the same directory as `doc_shape.txt`.
+If in current directory you have not created source .md file for each subject defined in  `doc_shape.txt`, **script will do it for you** after first run.
 In the shape example which we see above, it will be e.g. file with the `general.md` name for "General" subject. Base on mentioned `general.md` file, script will create documentation body.
 
 3. **Run Script**

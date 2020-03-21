@@ -7,7 +7,6 @@
 - [4.0 Summary](#40-summary)
 
 ##  1.0 General
-This guide was last updated for Swift 4.2 on January 22, 2019.
 
 ##  2.0 Architecture
 Use compiler inferred context to write shorter, clear code.  (Also see [Type Inference](#type-inference).)
@@ -28,7 +27,6 @@ let toView = context.view(forKey: UITransitionContextViewKey.to)
 let view = UIView(frame: CGRect.zero)
 ```
 ###  2.1.0 Our Approach
-We have choosen this Architecture because is good and because we have choosen this ;p 
 
 ##  3.0 CI and Rest
 
