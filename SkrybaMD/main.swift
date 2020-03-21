@@ -87,11 +87,154 @@ struct FileIORepository: FileIORepositoring {
     }
 }
 
+struct IntentFactory {
+    func make(baseOn index: Int) -> String {
+        String(repeating: Constant.tab, count: index - 1)
+    }
+}
+
+protocol TableOfContentPrinting {
+    func print(from node: Node, base: String) -> String
+}
+
+protocol TableRowFactoring {
+    func make(node: Node, base: String) -> String
+}
+
+/// Struct print table plain content option: `- 1.0 General`
+struct TableRowPlainFactory: TableRowFactoring {
+    let intentFactory = IntentFactory()
+    
+    func make(node: Node, base: String) -> String {
+        Constant.newLine
+            + intentFactory.make(baseOn: node.intentCount())
+            + Constant.intent
+            + Constant.space
+            + node.index
+            + Constant.space
+            + node.title
+    }
+}
+
+/// Struct print table content with link option: `- [1.0 General](#10-general)`
+struct TableRowLinkedFactory: TableRowFactoring {
+    private struct ConstantPrivate {
+        static let squareBracketOpen = "["
+        static let squareBracketClose = "]"
+        static let linkOpen = "(#"
+        static let linkClose = ")"
+        static let dash = "-"
+        static let digitSeparator = "."
+    }
+    
+    let intentFactory = IntentFactory()
+    
+    func make(node: Node, base: String) -> String {
+        Constant.newLine
+            + intentFactory.make(baseOn: node.intentCount())
+            + Constant.intent
+            + Constant.space
+            + ConstantPrivate.squareBracketOpen
+            + node.index
+            + Constant.space
+            + node.title
+            + ConstantPrivate.squareBracketClose
+            + ConstantPrivate.linkOpen
+            // We need to convert 2.0 to 20 (removing dots)
+            + node.index.replacingOccurrences(of: ConstantPrivate.digitSeparator, with: "")
+            + ConstantPrivate.dash
+            + node.title.replacingOccurrences(of: " ", with: ConstantPrivate.dash).lowercased()
+            + ConstantPrivate.linkClose
+    }
+}
+
+struct TableOfContentPrinter: TableOfContentPrinting {
+    var rowFactory: TableRowFactoring
+    
+    init(rowFactory: TableRowFactoring) {
+        self.rowFactory = rowFactory
+    }
+    
+    func print(from node: Node, base: String) -> String {
+        if let innerNode = node.innerNode {
+            return rowFactory.make(node: innerNode, base: base)
+                + print(from: innerNode, base: base)
+        }
+        
+        if let next = node.nextSiblingNode {
+            return rowFactory.make(node: next, base: base)
+                + print(from: next, base: base)
+        }
+        
+        return ""
+    }
+}
+
+
+protocol DocumentBodyPrinting {
+    func print(from node: Node, base: String) -> String
+}
+
+struct DocumentBodyPrinter: DocumentBodyPrinting {
+    let intentFactory = IntentFactory()
+    
+    func print(from node: Node, base: String) -> String {
+        func templateFactory(node: Node,
+                             stertItem: String,
+                             isInnerNode: Bool) -> String {
+            Constant.newLine
+                + generateIntentForContent(baseOn: node.intentCount(), isInnerNode: isInnerNode)
+                + stertItem
+                + Constant.space
+                + node.index
+                + Constant.space
+                + node.title
+                + Constant.newLine
+                + node.content
+                + print(from: node, base: base)
+        }
+        
+        if let innerNode = node.innerNode {
+            let stertItem = innerNode.intentCount() == 2 ? MDSign.Header.small : MDSign.List.sign
+            
+            return templateFactory(node: innerNode,
+                                   stertItem: stertItem,
+                                   isInnerNode: true)
+        }
+        
+        if let next = node.nextSiblingNode {
+            let isRootOfNodes = next.intentCount() == 1
+            let stertItem = isRootOfNodes ? MDSign.Header.big : MDSign.List.sign
+            
+            return templateFactory(node: next,
+                                   stertItem: stertItem,
+                                   isInnerNode: !isRootOfNodes)
+        }
+        
+        return ""
+    }
+    
+    private func generateIntentForContent(baseOn index: Int, isInnerNode: Bool) -> String {
+        // We don't want to have intent, aligment with old manual Documentation look and feel
+        guard index < 2 else { return "" }
+        // MD parsers are not treated well \t intent so we need to adjust by -1 space intention topics to make them work 💩
+        let additionalIntent = isInnerNode ? 1 : 0
+        
+        return intentFactory.make(baseOn: index - additionalIntent)
+    }
+}
+
 struct Generator {
     private let fileRepository: FileIORepositoring
+    private let tableOfContentPrinter: TableOfContentPrinting
+    private let documentBodyPrinter: DocumentBodyPrinting
     
-    init(fileRepository: FileIORepositoring = FileIORepository()) {
+    init(fileRepository: FileIORepositoring = FileIORepository(),
+         tableOfContentPrinter: TableOfContentPrinting,
+         documentBodyPrinter: DocumentBodyPrinting) {
         self.fileRepository = fileRepository
+        self.tableOfContentPrinter = tableOfContentPrinter
+        self.documentBodyPrinter = documentBodyPrinter
     }
     
     func makeNodesLinkedList(from text: String) -> Node {
@@ -131,69 +274,11 @@ struct Generator {
     }
     
     func printTitles(from node: Node, base: String) -> String {
-        func templateFactory(node: Node, base: String) -> String {
-            Constant.newLine
-                + generateIntent(baseOn: node.intentCount())
-                + Constant.intent
-                + Constant.space
-                + "["
-                + node.index
-                + Constant.space
-                + node.title
-                + "]"
-                + "(#"
-                + node.index
-                + "-"
-                + node.title.replacingOccurrences(of: " ", with: "-").lowercased()
-                + ")"
-                + printTitles(from: node, base: base)
-        }
-        
-        if let innerNode = node.innerNode {
-            return templateFactory(node: innerNode, base: base)
-        }
-        
-        if let next = node.nextSiblingNode {
-            return templateFactory(node: next, base: base)
-        }
-        
-        return ""
+        tableOfContentPrinter.print(from: node, base: base)
     }
     
     func printContent(from node: Node, base: String) -> String {
-        func templateFactory(node: Node,
-                             stertItem: String,
-                             isInnerNode: Bool) -> String {
-            Constant.newLine
-                + generateIntentForContent(baseOn: node.intentCount(), isInnerNode: isInnerNode)
-                + stertItem
-                + Constant.space
-                + node.index
-                + Constant.space
-                + node.title
-                + Constant.newLine
-                + node.content
-                + printContent(from: node, base: base)
-        }
-        
-        if let innerNode = node.innerNode {
-            let stertItem = innerNode.intentCount() == 2 ? MDSign.Header.small : MDSign.List.sign
-            
-            return templateFactory(node: innerNode,
-                                   stertItem: stertItem,
-                                   isInnerNode: true)
-        }
-        
-        if let next = node.nextSiblingNode {
-            let isRootOfNodes = next.intentCount() == 1
-            let stertItem = isRootOfNodes ? MDSign.Header.big : MDSign.List.sign
-            
-            return templateFactory(node: next,
-                                   stertItem: stertItem,
-                                   isInnerNode: !isRootOfNodes)
-        }
-        
-        return ""
+        documentBodyPrinter.print(from: node, base: base)
     }
     
     private func generateNode(from row: String.SubSequence) -> Node {
@@ -287,24 +372,6 @@ struct Generator {
         
         return result
     }
-//
-//    func decorateSubjectWithLink(index: String, nodeTitle: String) -> String {
-//        "["
-//
-//    }
-    
-    private func generateIntent(baseOn index: Int) -> String {
-        String(repeating: Constant.tab, count: index - 1)
-    }
-    
-    private func generateIntentForContent(baseOn index: Int, isInnerNode: Bool) -> String {
-        // We don't want to have intent, aligment with old manual Documentation look and feel
-        guard index < 2 else { return "" }
-        // MD parsers are not treated well \t intent so we need to adjust by -1 space intention topics to make them work 💩
-        let additionalIntent = isInnerNode ? 1 : 0
-        
-        return generateIntent(baseOn: index - additionalIntent)
-    }
 }
 
 //------------------------------------------------
@@ -325,9 +392,9 @@ func printProcessLogs(with content: String) {
     print("\(Constant.newLine)✅ " + content)
 }
 
-struct DocumentPrinter {
+struct DocumentsOutputEncoder {
     
-    static func print(doc: Doc, printerOutput: (String) -> Void) {
+    static func encode(doc: Doc, printerOutput: (String) -> Void) {
         let documentHeaderTitle = MDSign.Header.big
             + "Table Of Content"
         
@@ -365,7 +432,10 @@ struct FilePrinter: OutputPrinting {
 //------------------------------------------------
 
 func generate(fileName: String?) {
-    let generator = Generator()
+    let tableOfContentPrinter = TableOfContentPrinter(rowFactory: TableRowLinkedFactory())
+    let documentBodyPrinter = DocumentBodyPrinter()
+    let generator = Generator(tableOfContentPrinter: tableOfContentPrinter,
+                              documentBodyPrinter: documentBodyPrinter)
     let documentShape = FileIORepository().fetchDocumentShape()
     let rootNode = generator.makeNodesLinkedList(from: documentShape)
     let head = Node(intent: "", title: "", content: "")
@@ -376,8 +446,8 @@ func generate(fileName: String?) {
     let document = Doc(tableOfContent: tableOfContent,
                        content: content)
     
-    DocumentPrinter.print(doc: document) { content in
-        FilePrinter.printOutput(content: content, documentName: fileName)
+    DocumentsOutputEncoder.encode(doc: document) { encodedContent in
+        FilePrinter.printOutput(content: encodedContent, documentName: fileName)
     }
 }
 

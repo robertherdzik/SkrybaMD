@@ -6,5 +6,5 @@ Simple markdown documentation generator, never again -> git conflicts among the 
 - [x] handle as a input of the script name of the Output file
 - [ ] create redable README.md file, with installation, how to use, ect...
 - [ ] clean up code, move to separate files, change into classes/structures
-- [ ] create .md anchors from table of content to particular documentation place (see: https://gist.github.com/asabaylus/3071099#file-gistfile1-md)
+- [x] create .md anchors from table of content to particular documentation place (see: https://gist.github.com/asabaylus/3071099#file-gistfile1-md)
 
