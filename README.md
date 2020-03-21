@@ -7,6 +7,15 @@ Simple markdown documentation generator, never again -> git conflicts among the 
 
 # Motivation to create SkrybaMD
 
+We all know that in big teams we have a lot of agreements which needs to be stored somewhere (for newcomers and also for current developers), this script will help you to do this, create your SwiftStyleGuide.md or ArchitectureDescription.md documentation in easy to maintain way 🚀
+
+Therefore, creating of documentation for your project, should not limit you at all! Maintaining and editing documentation needs to be easy as it is possible, also we should minimalise situation when multiple team members are manually editing main documentation file, it leads us only towards problems (git conflicts), and in result slow us down 🛩.
+This simple to use script is intended to be very easy to use and reduce as much as possible git conflicts among the team members interaction with documentation.
+- By separate file for each Table of Content subject we can organize information in small encapsulated .md files.
+- There will be no longer situation that someone won't add another subject in the middle of the documentation, because all subjects iteration is done by the script.
+- You can define as many intentions in the file as you want!
+- You can tap into Table of Content subject and you will be redirected to particular place in the documentation file.
+
 # How it works? 
 
 ![](./ReadmeAssets/SkrybaMD_flow.png)
@@ -44,17 +53,23 @@ In the shape example which we see above, it will be e.g. file with the `general.
 
 Run script using terminal in the directory of previously defined files (`doc_shape.txt` and content subjects .md files). 
 
-`>> SkrybaMD MySuperDocumentation`  - if you have installed SkrybaMD globally 🌍
+`$ SkrybaMD MySuperDocumentation`  - if you have installed SkrybaMD globally 🌍
 
 or
 
-`>> ./SkrybaMD MySuperDocumentation` - if you have SkrybaMD script in the current directory 🏠
+`$ ./SkrybaMD MySuperDocumentation` - if you have SkrybaMD script in the current directory 🏠
 
 You will find markdown generated `MySuperDocumentation.md` file in the same directory 💥
 
 ENJOY 🙌
 
 _NOTE: you can play around with script using "Example" folder from this repository_
+
+**Check help**
+
+If you are not sure how to use it, go and hit `--help` to get verbose instructions
+
+`$ SkrybaMD --help`
 
 # Installation
 
@@ -66,13 +81,6 @@ $ swift build -c release
 $ cp -f .build/release/SkrybaMD /usr/local/bin/SkrybaMD
 ```
 
-# TODO
-- [x] create script installation logic (now script need to be build from xcode and copy/paste in the place where source files are located)
-- [x] handle as a input of the script name of the Output file
-- [ ] create redable README.md file, with installation, how to use, ect...
-- [ ] clean up code, move to separate files, change into classes/structures
-- [x] create .md anchors from table of content to particular documentation place (see: https://gist.github.com/asabaylus/3071099#file-gistfile1-md)
-- [ ] Handle special characters in the Table of Content titles like e.g.: `, ~ ... now probably some of them will break linking mechanism
-- [ ] Add "Do not edit directly .md file" footer
-- [ ] Unit Tests
-- [ ] Move Todo to separate .md file
+# Contribution
+
+If you have any idea how to improve the project, feel free to do it 🙌❤️
