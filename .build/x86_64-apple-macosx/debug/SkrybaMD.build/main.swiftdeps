@@ -1,0 +1,1092 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "shell"
+- "Constant"
+- "Node"
+- "Doc"
+- "FileIORepositoring"
+- "FileIORepository"
+- "IntentFactory"
+- "TableOfContentPrinting"
+- "TableRowFactoring"
+- "TableRowPlainFactory"
+- "TableRowLinkedFactory"
+- "TableOfContentPrinter"
+- "DocumentBodyPrinting"
+- "DocumentBodyPrinter"
+- "Generator"
+- "MDSign"
+- "printProcessLogs"
+- "DocumentsOutputEncoder"
+- "OutputPrinting"
+- "ConsolePrinter"
+- "FilePrinter"
+- "generate"
+- "arguments"
+- "productName"
+provides-nominal:
+- "8SkrybaMD8ConstantO"
+- "8SkrybaMD4NodeC"
+- "8SkrybaMD3DocV"
+- "8SkrybaMD18FileIORepositoringP"
+- "8SkrybaMD16FileIORepositoryV"
+- "8SkrybaMD13IntentFactoryV"
+- "8SkrybaMD22TableOfContentPrintingP"
+- "8SkrybaMD17TableRowFactoringP"
+- "8SkrybaMD20TableRowPlainFactoryV"
+- "8SkrybaMD21TableRowLinkedFactoryV"
+- "8SkrybaMD21TableOfContentPrinterV"
+- "8SkrybaMD20DocumentBodyPrintingP"
+- "8SkrybaMD19DocumentBodyPrinterV"
+- "8SkrybaMD9GeneratorV"
+- "8SkrybaMD6MDSignV"
+- "8SkrybaMD6MDSignV6HeaderV"
+- "8SkrybaMD6MDSignV4ListV"
+- "8SkrybaMD22DocumentsOutputEncoderV"
+- "8SkrybaMD14OutputPrintingP"
+- "8SkrybaMD14ConsolePrinterV"
+- "8SkrybaMD11FilePrinterV"
+provides-member:
+- ["8SkrybaMD8ConstantO", ""]
+- ["8SkrybaMD4NodeC", ""]
+- ["8SkrybaMD3DocV", ""]
+- ["8SkrybaMD18FileIORepositoringP", ""]
+- ["8SkrybaMD16FileIORepositoryV", ""]
+- ["8SkrybaMD13IntentFactoryV", ""]
+- ["8SkrybaMD22TableOfContentPrintingP", ""]
+- ["8SkrybaMD17TableRowFactoringP", ""]
+- ["8SkrybaMD20TableRowPlainFactoryV", ""]
+- ["8SkrybaMD21TableRowLinkedFactoryV", ""]
+- ["8SkrybaMD21TableOfContentPrinterV", ""]
+- ["8SkrybaMD20DocumentBodyPrintingP", ""]
+- ["8SkrybaMD19DocumentBodyPrinterV", ""]
+- ["8SkrybaMD9GeneratorV", ""]
+- ["8SkrybaMD6MDSignV", ""]
+- ["8SkrybaMD6MDSignV6HeaderV", ""]
+- ["8SkrybaMD6MDSignV4ListV", ""]
+- ["8SkrybaMD22DocumentsOutputEncoderV", ""]
+- ["8SkrybaMD14OutputPrintingP", ""]
+- ["8SkrybaMD14ConsolePrinterV", ""]
+- ["8SkrybaMD11FilePrinterV", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "!"
+- !private "!="
+- !private "+"
+- !private "+="
+- !private "-"
+- !private "..."
+- !private "..<"
+- !private "<"
+- !private "<="
+- !private "=="
+- ">"
+- !private "??"
+- "AssignmentPrecedence"
+- "Bool"
+- !private "BooleanLiteralType"
+- "CommandLine"
+- "ConsolePrinter"
+- "Constant"
+- "Doc"
+- "DocumentBodyPrinter"
+- "DocumentBodyPrinting"
+- "DocumentsOutputEncoder"
+- "FileIORepositoring"
+- "FileIORepository"
+- "FileManager"
+- "FilePrinter"
+- !private "FloatLiteralType"
+- "Generator"
+- "Int"
+- "Int32"
+- !private "IntegerLiteralType"
+- "IntentFactory"
+- "MDSign"
+- "Node"
+- "OutputPrinting"
+- !private "Process"
+- "String"
+- "StringLiteralType"
+- "TableOfContentPrinter"
+- "TableOfContentPrinting"
+- "TableRowFactoring"
+- "TableRowLinkedFactory"
+- "TableRowPlainFactory"
+- "TernaryPrecedence"
+- "UnicodeScalarType"
+- "Void"
+- "arguments"
+- !private "fatalError"
+- "generate"
+- "print"
+- "printProcessLogs"
+- "productName"
+- "shell"
+- !private "~="
+depends-member:
+- !private ["Sa", "append"]
+- ["Sa", "count"]
+- !private ["Sa", "first"]
+- !private ["Sa", "forEach"]
+- !private ["Sa", "init"]
+- !private ["Sa", "last"]
+- !private ["Sa", "map"]
+- !private ["Sa", "sorted"]
+- ["Sa", "subscript"]
+- !private ["SK", "Element"]
+- !private ["SK", "Encoding"]
+- ["SK", "SubSequence"]
+- !private ["SK", "append"]
+- !private ["SK", "components"]
+- ["SK", "count"]
+- !private ["SK", "first"]
+- !private ["SK", "forEach"]
+- !private ["SK", "init"]
+- !private ["SK", "last"]
+- !private ["SK", "lowercased"]
+- !private ["SK", "map"]
+- !private ["SK", "replacingOccurrences"]
+- !private ["SK", "sorted"]
+- !private ["SK", "split"]
+- ["SK", "subscript"]
+- !private ["SK", "trimmingCharacters"]
+- !private ["SK", "write"]
+- !private ["s7CVarArgP", "Element"]
+- !private ["s7CVarArgP", "Encoding"]
+- ["s7CVarArgP", "SubSequence"]
+- !private ["s7CVarArgP", "append"]
+- !private ["s7CVarArgP", "arguments"]
+- ["s7CVarArgP", "count"]
+- !private ["s7CVarArgP", "currentDirectoryPath"]
+- ["s7CVarArgP", "default"]
+- !private ["s7CVarArgP", "first"]
+- !private ["s7CVarArgP", "forEach"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "last"]
+- !private ["s7CVarArgP", "launch"]
+- !private ["s7CVarArgP", "launchPath"]
+- !private ["s7CVarArgP", "lowercased"]
+- !private ["s7CVarArgP", "map"]
+- !private ["s7CVarArgP", "removeValue"]
+- !private ["s7CVarArgP", "replacingOccurrences"]
+- !private ["s7CVarArgP", "sorted"]
+- !private ["s7CVarArgP", "split"]
+- ["s7CVarArgP", "subscript"]
+- !private ["s7CVarArgP", "terminationStatus"]
+- !private ["s7CVarArgP", "trimmingCharacters"]
+- !private ["s7CVarArgP", "waitUntilExit"]
+- !private ["s7CVarArgP", "write"]
+- !private ["SJ", "init"]
+- !private ["10Foundation12CharacterSetV", "whitespacesAndNewlines"]
+- !private ["Sl", "Element"]
+- !private ["Sl", "Encoding"]
+- ["Sl", "SubSequence"]
+- !private ["Sl", "append"]
+- !private ["Sl", "components"]
+- ["Sl", "count"]
+- !private ["Sl", "first"]
+- !private ["Sl", "forEach"]
+- !private ["Sl", "init"]
+- !private ["Sl", "last"]
+- !private ["Sl", "lowercased"]
+- !private ["Sl", "map"]
+- !private ["Sl", "removeValue"]
+- !private ["Sl", "replacingOccurrences"]
+- !private ["Sl", "sorted"]
+- !private ["Sl", "split"]
+- ["Sl", "subscript"]
+- !private ["Sl", "trimmingCharacters"]
+- !private ["Sl", "write"]
+- ["s11CommandLineO", "arguments"]
+- !private ["SL", "Element"]
+- !private ["SL", "Encoding"]
+- ["SL", "SubSequence"]
+- !private ["SL", "components"]
+- !private ["SL", "count"]
+- !private ["SL", "init"]
+- !private ["SL", "lowercased"]
+- !private ["SL", "replacingOccurrences"]
+- !private ["SL", "split"]
+- !private ["SL", "trimmingCharacters"]
+- !private ["SL", "write"]
+- ["8SkrybaMD14ConsolePrinterV", "String"]
+- ["8SkrybaMD14ConsolePrinterV", "deinit"]
+- ["8SkrybaMD14ConsolePrinterV", "init"]
+- !private ["8SkrybaMD14ConsolePrinterV", "print"]
+- ["8SkrybaMD14ConsolePrinterV", "printOutput"]
+- ["8SkrybaMD8ConstantO", "intent"]
+- ["8SkrybaMD8ConstantO", "newLine"]
+- ["8SkrybaMD8ConstantO", "separator"]
+- ["8SkrybaMD8ConstantO", "space"]
+- ["8SkrybaMD8ConstantO", "tab"]
+- !private ["10Foundation15ContiguousBytesP", "append"]
+- ["10Foundation15ContiguousBytesP", "count"]
+- !private ["10Foundation15ContiguousBytesP", "first"]
+- !private ["10Foundation15ContiguousBytesP", "forEach"]
+- !private ["10Foundation15ContiguousBytesP", "init"]
+- !private ["10Foundation15ContiguousBytesP", "last"]
+- !private ["10Foundation15ContiguousBytesP", "map"]
+- !private ["10Foundation15ContiguousBytesP", "sorted"]
+- ["10Foundation15ContiguousBytesP", "subscript"]
+- !private ["s28CustomDebugStringConvertibleP", "Element"]
+- !private ["s28CustomDebugStringConvertibleP", "Encoding"]
+- ["s28CustomDebugStringConvertibleP", "SubSequence"]
+- !private ["s28CustomDebugStringConvertibleP", "append"]
+- !private ["s28CustomDebugStringConvertibleP", "arguments"]
+- !private ["s28CustomDebugStringConvertibleP", "components"]
+- ["s28CustomDebugStringConvertibleP", "count"]
+- !private ["s28CustomDebugStringConvertibleP", "currentDirectoryPath"]
+- ["s28CustomDebugStringConvertibleP", "default"]
+- !private ["s28CustomDebugStringConvertibleP", "first"]
+- !private ["s28CustomDebugStringConvertibleP", "forEach"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "last"]
+- !private ["s28CustomDebugStringConvertibleP", "launch"]
+- !private ["s28CustomDebugStringConvertibleP", "launchPath"]
+- !private ["s28CustomDebugStringConvertibleP", "lowercased"]
+- !private ["s28CustomDebugStringConvertibleP", "map"]
+- !private ["s28CustomDebugStringConvertibleP", "removeValue"]
+- !private ["s28CustomDebugStringConvertibleP", "replacingOccurrences"]
+- !private ["s28CustomDebugStringConvertibleP", "sorted"]
+- !private ["s28CustomDebugStringConvertibleP", "split"]
+- ["s28CustomDebugStringConvertibleP", "subscript"]
+- !private ["s28CustomDebugStringConvertibleP", "terminationStatus"]
+- !private ["s28CustomDebugStringConvertibleP", "trimmingCharacters"]
+- !private ["s28CustomDebugStringConvertibleP", "waitUntilExit"]
+- !private ["s28CustomDebugStringConvertibleP", "whitespacesAndNewlines"]
+- !private ["s28CustomDebugStringConvertibleP", "write"]
+- !private ["s17CustomReflectableP", "Element"]
+- !private ["s17CustomReflectableP", "Encoding"]
+- ["s17CustomReflectableP", "SubSequence"]
+- !private ["s17CustomReflectableP", "append"]
+- !private ["s17CustomReflectableP", "components"]
+- ["s17CustomReflectableP", "count"]
+- !private ["s17CustomReflectableP", "first"]
+- !private ["s17CustomReflectableP", "forEach"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "last"]
+- !private ["s17CustomReflectableP", "lowercased"]
+- !private ["s17CustomReflectableP", "map"]
+- !private ["s17CustomReflectableP", "removeValue"]
+- !private ["s17CustomReflectableP", "replacingOccurrences"]
+- !private ["s17CustomReflectableP", "sorted"]
+- !private ["s17CustomReflectableP", "split"]
+- ["s17CustomReflectableP", "subscript"]
+- !private ["s17CustomReflectableP", "trimmingCharacters"]
+- !private ["s17CustomReflectableP", "write"]
+- !private ["s23CustomStringConvertibleP", "Element"]
+- !private ["s23CustomStringConvertibleP", "Encoding"]
+- ["s23CustomStringConvertibleP", "SubSequence"]
+- !private ["s23CustomStringConvertibleP", "append"]
+- ["s23CustomStringConvertibleP", "appendInterpolation"]
+- ["s23CustomStringConvertibleP", "appendLiteral"]
+- !private ["s23CustomStringConvertibleP", "arguments"]
+- !private ["s23CustomStringConvertibleP", "components"]
+- ["s23CustomStringConvertibleP", "count"]
+- !private ["s23CustomStringConvertibleP", "currentDirectoryPath"]
+- ["s23CustomStringConvertibleP", "default"]
+- !private ["s23CustomStringConvertibleP", "first"]
+- !private ["s23CustomStringConvertibleP", "forEach"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "last"]
+- !private ["s23CustomStringConvertibleP", "launch"]
+- !private ["s23CustomStringConvertibleP", "launchPath"]
+- !private ["s23CustomStringConvertibleP", "lowercased"]
+- !private ["s23CustomStringConvertibleP", "map"]
+- !private ["s23CustomStringConvertibleP", "removeValue"]
+- !private ["s23CustomStringConvertibleP", "replacingOccurrences"]
+- !private ["s23CustomStringConvertibleP", "sorted"]
+- !private ["s23CustomStringConvertibleP", "split"]
+- ["s23CustomStringConvertibleP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "terminationStatus"]
+- !private ["s23CustomStringConvertibleP", "trimmingCharacters"]
+- !private ["s23CustomStringConvertibleP", "utf8"]
+- !private ["s23CustomStringConvertibleP", "waitUntilExit"]
+- !private ["s23CustomStringConvertibleP", "whitespacesAndNewlines"]
+- !private ["s23CustomStringConvertibleP", "write"]
+- !private ["10Foundation12DataProtocolP", "append"]
+- ["10Foundation12DataProtocolP", "count"]
+- !private ["10Foundation12DataProtocolP", "first"]
+- !private ["10Foundation12DataProtocolP", "forEach"]
+- !private ["10Foundation12DataProtocolP", "init"]
+- !private ["10Foundation12DataProtocolP", "last"]
+- !private ["10Foundation12DataProtocolP", "map"]
+- !private ["10Foundation12DataProtocolP", "sorted"]
+- ["10Foundation12DataProtocolP", "subscript"]
+- !private ["Se", "Element"]
+- !private ["Se", "Encoding"]
+- ["Se", "SubSequence"]
+- !private ["Se", "append"]
+- ["Se", "count"]
+- !private ["Se", "first"]
+- !private ["Se", "forEach"]
+- !private ["Se", "init"]
+- !private ["Se", "last"]
+- !private ["Se", "lowercased"]
+- !private ["Se", "map"]
+- !private ["Se", "removeValue"]
+- !private ["Se", "replacingOccurrences"]
+- !private ["Se", "sorted"]
+- !private ["Se", "split"]
+- ["Se", "subscript"]
+- !private ["Se", "trimmingCharacters"]
+- !private ["Se", "whitespacesAndNewlines"]
+- !private ["Se", "write"]
+- ["s26DefaultStringInterpolationV", "appendInterpolation"]
+- ["s26DefaultStringInterpolationV", "appendLiteral"]
+- !private ["SD", "forEach"]
+- !private ["SD", "map"]
+- !private ["SD", "removeValue"]
+- !private ["SD", "subscript"]
+- ["8SkrybaMD3DocV", "String"]
+- ["8SkrybaMD3DocV", "content"]
+- ["8SkrybaMD3DocV", "init"]
+- ["8SkrybaMD3DocV", "tableOfContent"]
+- ["8SkrybaMD19DocumentBodyPrinterV", "Bool"]
+- !private ["8SkrybaMD19DocumentBodyPrinterV", "Constant"]
+- ["8SkrybaMD19DocumentBodyPrinterV", "Int"]
+- ["8SkrybaMD19DocumentBodyPrinterV", "IntentFactory"]
+- !private ["8SkrybaMD19DocumentBodyPrinterV", "MDSign"]
+- ["8SkrybaMD19DocumentBodyPrinterV", "Node"]
+- ["8SkrybaMD19DocumentBodyPrinterV", "String"]
+- ["8SkrybaMD19DocumentBodyPrinterV", "deinit"]
+- !private ["8SkrybaMD19DocumentBodyPrinterV", "generateIntentForContent"]
+- ["8SkrybaMD19DocumentBodyPrinterV", "init"]
+- ["8SkrybaMD19DocumentBodyPrinterV", "intentFactory"]
+- ["8SkrybaMD19DocumentBodyPrinterV", "print"]
+- !private ["8SkrybaMD20DocumentBodyPrintingP", "Constant"]
+- ["8SkrybaMD20DocumentBodyPrintingP", "IntentFactory"]
+- !private ["8SkrybaMD20DocumentBodyPrintingP", "MDSign"]
+- ["8SkrybaMD20DocumentBodyPrintingP", "Node"]
+- ["8SkrybaMD20DocumentBodyPrintingP", "String"]
+- ["8SkrybaMD20DocumentBodyPrintingP", ""]
+- !private ["8SkrybaMD20DocumentBodyPrintingP", "generateIntentForContent"]
+- !private ["8SkrybaMD20DocumentBodyPrintingP", "init"]
+- !private ["8SkrybaMD20DocumentBodyPrintingP", "intentFactory"]
+- ["8SkrybaMD20DocumentBodyPrintingP", "print"]
+- !private ["8SkrybaMD22DocumentsOutputEncoderV", "Constant"]
+- ["8SkrybaMD22DocumentsOutputEncoderV", "Doc"]
+- !private ["8SkrybaMD22DocumentsOutputEncoderV", "MDSign"]
+- ["8SkrybaMD22DocumentsOutputEncoderV", "String"]
+- ["8SkrybaMD22DocumentsOutputEncoderV", "Void"]
+- ["8SkrybaMD22DocumentsOutputEncoderV", "encode"]
+- ["8SkrybaMD22DocumentsOutputEncoderV", "init"]
+- !private ["SE", "Element"]
+- !private ["SE", "Encoding"]
+- ["SE", "SubSequence"]
+- !private ["SE", "append"]
+- ["SE", "count"]
+- !private ["SE", "first"]
+- !private ["SE", "forEach"]
+- !private ["SE", "init"]
+- !private ["SE", "last"]
+- !private ["SE", "lowercased"]
+- !private ["SE", "map"]
+- !private ["SE", "removeValue"]
+- !private ["SE", "replacingOccurrences"]
+- !private ["SE", "sorted"]
+- !private ["SE", "split"]
+- ["SE", "subscript"]
+- !private ["SE", "trimmingCharacters"]
+- !private ["SE", "whitespacesAndNewlines"]
+- !private ["SE", "write"]
+- !private ["SS10FoundationE8EncodingV", "utf8"]
+- !private ["SQ", "Element"]
+- !private ["SQ", "Encoding"]
+- ["SQ", "SubSequence"]
+- !private ["SQ", "append"]
+- !private ["SQ", "arguments"]
+- !private ["SQ", "components"]
+- ["SQ", "count"]
+- !private ["SQ", "currentDirectoryPath"]
+- ["SQ", "default"]
+- !private ["SQ", "first"]
+- !private ["SQ", "forEach"]
+- !private ["SQ", "init"]
+- !private ["SQ", "last"]
+- !private ["SQ", "launch"]
+- !private ["SQ", "launchPath"]
+- !private ["SQ", "lowercased"]
+- !private ["SQ", "map"]
+- !private ["SQ", "removeValue"]
+- !private ["SQ", "replacingOccurrences"]
+- !private ["SQ", "sorted"]
+- !private ["SQ", "split"]
+- ["SQ", "subscript"]
+- !private ["SQ", "terminationStatus"]
+- !private ["SQ", "trimmingCharacters"]
+- !private ["SQ", "utf8"]
+- !private ["SQ", "waitUntilExit"]
+- !private ["SQ", "whitespacesAndNewlines"]
+- !private ["SQ", "write"]
+- !private ["s25ExpressibleByArrayLiteralP", "append"]
+- ["s25ExpressibleByArrayLiteralP", "count"]
+- !private ["s25ExpressibleByArrayLiteralP", "first"]
+- !private ["s25ExpressibleByArrayLiteralP", "forEach"]
+- !private ["s25ExpressibleByArrayLiteralP", "init"]
+- !private ["s25ExpressibleByArrayLiteralP", "last"]
+- !private ["s25ExpressibleByArrayLiteralP", "map"]
+- !private ["s25ExpressibleByArrayLiteralP", "sorted"]
+- ["s25ExpressibleByArrayLiteralP", "subscript"]
+- !private ["s25ExpressibleByArrayLiteralP", "whitespacesAndNewlines"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "forEach"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "map"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "removeValue"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "subscript"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "Element"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "Encoding"]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "SubSequence"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "components"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "count"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "lowercased"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "replacingOccurrences"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "split"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "trimmingCharacters"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "write"]
+- !private ["s23ExpressibleByNilLiteralP", "replacingOccurrences"]
+- !private ["s32ExpressibleByStringInterpolationP", "Element"]
+- !private ["s32ExpressibleByStringInterpolationP", "Encoding"]
+- ["s32ExpressibleByStringInterpolationP", "SubSequence"]
+- !private ["s32ExpressibleByStringInterpolationP", "components"]
+- !private ["s32ExpressibleByStringInterpolationP", "count"]
+- !private ["s32ExpressibleByStringInterpolationP", "init"]
+- !private ["s32ExpressibleByStringInterpolationP", "lowercased"]
+- !private ["s32ExpressibleByStringInterpolationP", "replacingOccurrences"]
+- !private ["s32ExpressibleByStringInterpolationP", "split"]
+- !private ["s32ExpressibleByStringInterpolationP", "trimmingCharacters"]
+- !private ["s32ExpressibleByStringInterpolationP", "write"]
+- !private ["s26ExpressibleByStringLiteralP", "Element"]
+- !private ["s26ExpressibleByStringLiteralP", "Encoding"]
+- ["s26ExpressibleByStringLiteralP", "SubSequence"]
+- !private ["s26ExpressibleByStringLiteralP", "components"]
+- !private ["s26ExpressibleByStringLiteralP", "count"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "lowercased"]
+- !private ["s26ExpressibleByStringLiteralP", "replacingOccurrences"]
+- !private ["s26ExpressibleByStringLiteralP", "split"]
+- !private ["s26ExpressibleByStringLiteralP", "trimmingCharacters"]
+- !private ["s26ExpressibleByStringLiteralP", "write"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "Element"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "Encoding"]
+- ["s33ExpressibleByUnicodeScalarLiteralP", "SubSequence"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "components"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "count"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "lowercased"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "replacingOccurrences"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "split"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "trimmingCharacters"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "write"]
+- !private ["8SkrybaMD18FileIORepositoringP", "Constant"]
+- ["8SkrybaMD18FileIORepositoringP", "FileManager"]
+- ["8SkrybaMD18FileIORepositoringP", "String"]
+- ["8SkrybaMD18FileIORepositoringP", ""]
+- ["8SkrybaMD18FileIORepositoringP", "fetchDocumentShape"]
+- ["8SkrybaMD18FileIORepositoringP", "fetchFileContent"]
+- !private ["8SkrybaMD18FileIORepositoringP", "fileManager"]
+- ["8SkrybaMD18FileIORepositoringP", "init"]
+- !private ["8SkrybaMD18FileIORepositoringP", "printProcessLogs"]
+- ["8SkrybaMD18FileIORepositoringP", "saveDocumentationOutputFile"]
+- !private ["8SkrybaMD16FileIORepositoryV", "Constant"]
+- ["8SkrybaMD16FileIORepositoryV", "FileManager"]
+- ["8SkrybaMD16FileIORepositoryV", "String"]
+- ["8SkrybaMD16FileIORepositoryV", "deinit"]
+- ["8SkrybaMD16FileIORepositoryV", "fetchDocumentShape"]
+- ["8SkrybaMD16FileIORepositoryV", "fetchFileContent"]
+- !private ["8SkrybaMD16FileIORepositoryV", "fileManager"]
+- ["8SkrybaMD16FileIORepositoryV", "init"]
+- !private ["8SkrybaMD16FileIORepositoryV", "printProcessLogs"]
+- ["8SkrybaMD16FileIORepositoryV", "saveDocumentationOutputFile"]
+- !private ["So13NSFileManagerC", "currentDirectoryPath"]
+- ["So13NSFileManagerC", "default"]
+- ["8SkrybaMD11FilePrinterV", "FileIORepository"]
+- ["8SkrybaMD11FilePrinterV", "String"]
+- ["8SkrybaMD11FilePrinterV", "deinit"]
+- !private ["8SkrybaMD11FilePrinterV", "fileRepository"]
+- ["8SkrybaMD11FilePrinterV", "init"]
+- ["8SkrybaMD11FilePrinterV", "printOutput"]
+- !private ["8SkrybaMD9GeneratorV", "Constant"]
+- ["8SkrybaMD9GeneratorV", "DocumentBodyPrinting"]
+- ["8SkrybaMD9GeneratorV", "FileIORepositoring"]
+- !private ["8SkrybaMD9GeneratorV", "FileIORepository"]
+- ["8SkrybaMD9GeneratorV", "Int"]
+- ["8SkrybaMD9GeneratorV", "Node"]
+- ["8SkrybaMD9GeneratorV", "String"]
+- ["8SkrybaMD9GeneratorV", "TableOfContentPrinting"]
+- !private ["8SkrybaMD9GeneratorV", "createIndex"]
+- !private ["8SkrybaMD9GeneratorV", "documentBodyPrinter"]
+- !private ["8SkrybaMD9GeneratorV", "fatalError"]
+- !private ["8SkrybaMD9GeneratorV", "fileRepository"]
+- !private ["8SkrybaMD9GeneratorV", "generateNode"]
+- !private ["8SkrybaMD9GeneratorV", "getClosestPrevSiblingNode"]
+- ["8SkrybaMD9GeneratorV", "init"]
+- !private ["8SkrybaMD9GeneratorV", "makeFlatNodes"]
+- ["8SkrybaMD9GeneratorV", "makeNodesLinkedList"]
+- !private ["8SkrybaMD9GeneratorV", "numerate"]
+- ["8SkrybaMD9GeneratorV", "printContent"]
+- ["8SkrybaMD9GeneratorV", "printTitles"]
+- !private ["8SkrybaMD9GeneratorV", "tableOfContentPrinter"]
+- !private ["SH", "Element"]
+- !private ["SH", "Encoding"]
+- ["SH", "SubSequence"]
+- !private ["SH", "append"]
+- !private ["SH", "arguments"]
+- !private ["SH", "components"]
+- ["SH", "count"]
+- !private ["SH", "currentDirectoryPath"]
+- ["SH", "default"]
+- !private ["SH", "first"]
+- !private ["SH", "forEach"]
+- !private ["SH", "init"]
+- !private ["SH", "last"]
+- !private ["SH", "launch"]
+- !private ["SH", "launchPath"]
+- !private ["SH", "lowercased"]
+- !private ["SH", "map"]
+- !private ["SH", "removeValue"]
+- !private ["SH", "replacingOccurrences"]
+- !private ["SH", "sorted"]
+- !private ["SH", "split"]
+- ["SH", "subscript"]
+- !private ["SH", "terminationStatus"]
+- !private ["SH", "trimmingCharacters"]
+- !private ["SH", "utf8"]
+- !private ["SH", "waitUntilExit"]
+- !private ["SH", "whitespacesAndNewlines"]
+- !private ["SH", "write"]
+- ["8SkrybaMD6MDSignV6HeaderV", "big"]
+- ["8SkrybaMD6MDSignV6HeaderV", "init"]
+- ["8SkrybaMD6MDSignV6HeaderV", "small"]
+- !private ["8SkrybaMD13IntentFactoryV", "Constant"]
+- ["8SkrybaMD13IntentFactoryV", "Int"]
+- ["8SkrybaMD13IntentFactoryV", "String"]
+- ["8SkrybaMD13IntentFactoryV", "init"]
+- ["8SkrybaMD13IntentFactoryV", "make"]
+- ["8SkrybaMD6MDSignV4ListV", "init"]
+- ["8SkrybaMD6MDSignV4ListV", "sign"]
+- !private ["s25LosslessStringConvertibleP", "Element"]
+- !private ["s25LosslessStringConvertibleP", "Encoding"]
+- ["s25LosslessStringConvertibleP", "SubSequence"]
+- !private ["s25LosslessStringConvertibleP", "components"]
+- !private ["s25LosslessStringConvertibleP", "count"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s25LosslessStringConvertibleP", "lowercased"]
+- !private ["s25LosslessStringConvertibleP", "replacingOccurrences"]
+- !private ["s25LosslessStringConvertibleP", "split"]
+- !private ["s25LosslessStringConvertibleP", "trimmingCharacters"]
+- !private ["s25LosslessStringConvertibleP", "write"]
+- ["8SkrybaMD6MDSignV", "Header"]
+- ["8SkrybaMD6MDSignV", "List"]
+- ["8SkrybaMD6MDSignV", "init"]
+- !private ["s10MirrorPathP", "Element"]
+- !private ["s10MirrorPathP", "Encoding"]
+- ["s10MirrorPathP", "SubSequence"]
+- !private ["s10MirrorPathP", "count"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["s10MirrorPathP", "lowercased"]
+- !private ["s10MirrorPathP", "replacingOccurrences"]
+- !private ["s10MirrorPathP", "split"]
+- !private ["s10MirrorPathP", "trimmingCharacters"]
+- !private ["s10MirrorPathP", "write"]
+- !private ["SM", "append"]
+- ["SM", "count"]
+- !private ["SM", "first"]
+- !private ["SM", "forEach"]
+- !private ["SM", "init"]
+- !private ["SM", "last"]
+- !private ["SM", "map"]
+- !private ["SM", "sorted"]
+- ["SM", "subscript"]
+- !private ["10Foundation19MutableDataProtocolP", "append"]
+- ["10Foundation19MutableDataProtocolP", "count"]
+- !private ["10Foundation19MutableDataProtocolP", "first"]
+- !private ["10Foundation19MutableDataProtocolP", "forEach"]
+- !private ["10Foundation19MutableDataProtocolP", "init"]
+- !private ["10Foundation19MutableDataProtocolP", "last"]
+- !private ["10Foundation19MutableDataProtocolP", "map"]
+- !private ["10Foundation19MutableDataProtocolP", "sorted"]
+- ["10Foundation19MutableDataProtocolP", "subscript"]
+- !private ["So8NSCodingP", "count"]
+- !private ["So8NSCodingP", "lowercased"]
+- !private ["So8NSCodingP", "replacingOccurrences"]
+- !private ["So8NSCodingP", "split"]
+- !private ["So8NSCodingP", "trimmingCharacters"]
+- !private ["So8NSCodingP", "write"]
+- !private ["So9NSCopyingP", "count"]
+- !private ["So9NSCopyingP", "lowercased"]
+- !private ["So9NSCopyingP", "replacingOccurrences"]
+- !private ["So9NSCopyingP", "split"]
+- !private ["So9NSCopyingP", "trimmingCharacters"]
+- !private ["So9NSCopyingP", "write"]
+- !private ["So21NSItemProviderReadingP", "count"]
+- !private ["So21NSItemProviderReadingP", "lowercased"]
+- !private ["So21NSItemProviderReadingP", "replacingOccurrences"]
+- !private ["So21NSItemProviderReadingP", "split"]
+- !private ["So21NSItemProviderReadingP", "trimmingCharacters"]
+- !private ["So21NSItemProviderReadingP", "write"]
+- !private ["So21NSItemProviderWritingP", "count"]
+- !private ["So21NSItemProviderWritingP", "lowercased"]
+- !private ["So21NSItemProviderWritingP", "replacingOccurrences"]
+- !private ["So21NSItemProviderWritingP", "split"]
+- !private ["So21NSItemProviderWritingP", "trimmingCharacters"]
+- !private ["So21NSItemProviderWritingP", "write"]
+- !private ["So16NSMutableCopyingP", "count"]
+- !private ["So16NSMutableCopyingP", "lowercased"]
+- !private ["So16NSMutableCopyingP", "replacingOccurrences"]
+- !private ["So16NSMutableCopyingP", "split"]
+- !private ["So16NSMutableCopyingP", "trimmingCharacters"]
+- !private ["So16NSMutableCopyingP", "write"]
+- !private ["So8NSObjectC", "arguments"]
+- !private ["So8NSObjectC", "count"]
+- !private ["So8NSObjectC", "currentDirectoryPath"]
+- ["So8NSObjectC", "default"]
+- !private ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "launch"]
+- !private ["So8NSObjectC", "launchPath"]
+- !private ["So8NSObjectC", "lowercased"]
+- !private ["So8NSObjectC", "replacingOccurrences"]
+- !private ["So8NSObjectC", "split"]
+- !private ["So8NSObjectC", "terminationStatus"]
+- !private ["So8NSObjectC", "trimmingCharacters"]
+- !private ["So8NSObjectC", "waitUntilExit"]
+- !private ["So8NSObjectC", "write"]
+- !private ["So8NSObjectP", "arguments"]
+- !private ["So8NSObjectP", "count"]
+- !private ["So8NSObjectP", "currentDirectoryPath"]
+- ["So8NSObjectP", "default"]
+- !private ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "launch"]
+- !private ["So8NSObjectP", "launchPath"]
+- !private ["So8NSObjectP", "lowercased"]
+- !private ["So8NSObjectP", "replacingOccurrences"]
+- !private ["So8NSObjectP", "split"]
+- !private ["So8NSObjectP", "terminationStatus"]
+- !private ["So8NSObjectP", "trimmingCharacters"]
+- !private ["So8NSObjectP", "waitUntilExit"]
+- !private ["So8NSObjectP", "write"]
+- !private ["So14NSSecureCodingP", "count"]
+- !private ["So14NSSecureCodingP", "lowercased"]
+- !private ["So14NSSecureCodingP", "replacingOccurrences"]
+- !private ["So14NSSecureCodingP", "split"]
+- !private ["So14NSSecureCodingP", "trimmingCharacters"]
+- !private ["So14NSSecureCodingP", "write"]
+- !private ["So8NSStringC", "count"]
+- !private ["So8NSStringC", "lowercased"]
+- !private ["So8NSStringC", "replacingOccurrences"]
+- !private ["So8NSStringC", "split"]
+- !private ["So8NSStringC", "trimmingCharacters"]
+- !private ["So8NSStringC", "write"]
+- ["8SkrybaMD4NodeC", "Int"]
+- ["8SkrybaMD4NodeC", "Node"]
+- ["8SkrybaMD4NodeC", "String"]
+- ["8SkrybaMD4NodeC", "content"]
+- ["8SkrybaMD4NodeC", "index"]
+- ["8SkrybaMD4NodeC", "init"]
+- ["8SkrybaMD4NodeC", "innerNode"]
+- ["8SkrybaMD4NodeC", "intent"]
+- ["8SkrybaMD4NodeC", "intentCount"]
+- ["8SkrybaMD4NodeC", "nextSiblingNode"]
+- ["8SkrybaMD4NodeC", "prevSiblingNode"]
+- ["8SkrybaMD4NodeC", "title"]
+- !private ["Sq", "replacingOccurrences"]
+- ["8SkrybaMD14OutputPrintingP", "FileIORepository"]
+- ["8SkrybaMD14OutputPrintingP", "String"]
+- ["8SkrybaMD14OutputPrintingP", ""]
+- !private ["8SkrybaMD14OutputPrintingP", "fileRepository"]
+- !private ["8SkrybaMD14OutputPrintingP", "print"]
+- ["8SkrybaMD14OutputPrintingP", "printOutput"]
+- !private ["So6NSTaskC", "arguments"]
+- !private ["So6NSTaskC", "init"]
+- !private ["So6NSTaskC", "launch"]
+- !private ["So6NSTaskC", "launchPath"]
+- !private ["So6NSTaskC", "terminationStatus"]
+- !private ["So6NSTaskC", "waitUntilExit"]
+- !private ["Sk", "append"]
+- ["Sk", "count"]
+- !private ["Sk", "first"]
+- !private ["Sk", "forEach"]
+- !private ["Sk", "init"]
+- !private ["Sk", "last"]
+- !private ["Sk", "map"]
+- !private ["Sk", "sorted"]
+- ["Sk", "subscript"]
+- !private ["Sm", "Element"]
+- !private ["Sm", "Encoding"]
+- ["Sm", "SubSequence"]
+- !private ["Sm", "append"]
+- !private ["Sm", "components"]
+- ["Sm", "count"]
+- !private ["Sm", "first"]
+- !private ["Sm", "forEach"]
+- !private ["Sm", "init"]
+- !private ["Sm", "last"]
+- !private ["Sm", "lowercased"]
+- !private ["Sm", "map"]
+- !private ["Sm", "replacingOccurrences"]
+- !private ["Sm", "sorted"]
+- !private ["Sm", "split"]
+- ["Sm", "subscript"]
+- !private ["Sm", "trimmingCharacters"]
+- !private ["Sm", "write"]
+- !private ["SY", "utf8"]
+- !private ["10Foundation20ReferenceConvertibleP", "whitespacesAndNewlines"]
+- !private ["ST", "Element"]
+- !private ["ST", "Encoding"]
+- ["ST", "SubSequence"]
+- !private ["ST", "append"]
+- !private ["ST", "components"]
+- ["ST", "count"]
+- !private ["ST", "first"]
+- !private ["ST", "forEach"]
+- !private ["ST", "init"]
+- !private ["ST", "last"]
+- !private ["ST", "lowercased"]
+- !private ["ST", "map"]
+- !private ["ST", "removeValue"]
+- !private ["ST", "replacingOccurrences"]
+- !private ["ST", "sorted"]
+- !private ["ST", "split"]
+- ["ST", "subscript"]
+- !private ["ST", "trimmingCharacters"]
+- !private ["ST", "write"]
+- !private ["s10SetAlgebraP", "whitespacesAndNewlines"]
+- !private ["SS", "Element"]
+- !private ["SS", "Encoding"]
+- ["SS", "SubSequence"]
+- !private ["SS", "count"]
+- !private ["SS", "init"]
+- !private ["SS", "lowercased"]
+- !private ["SS", "replacingOccurrences"]
+- !private ["SS", "split"]
+- !private ["SS", "trimmingCharacters"]
+- !private ["SS", "write"]
+- ["s27StringInterpolationProtocolP", "appendInterpolation"]
+- ["s27StringInterpolationProtocolP", "appendLiteral"]
+- !private ["Sy", "Element"]
+- !private ["Sy", "Encoding"]
+- ["Sy", "SubSequence"]
+- !private ["Sy", "components"]
+- !private ["Sy", "count"]
+- !private ["Sy", "init"]
+- !private ["Sy", "lowercased"]
+- !private ["Sy", "replacingOccurrences"]
+- !private ["Sy", "split"]
+- !private ["Sy", "trimmingCharacters"]
+- !private ["Sy", "write"]
+- !private ["Ss", "components"]
+- ["8SkrybaMD21TableOfContentPrinterV", "Node"]
+- ["8SkrybaMD21TableOfContentPrinterV", "String"]
+- ["8SkrybaMD21TableOfContentPrinterV", "TableRowFactoring"]
+- ["8SkrybaMD21TableOfContentPrinterV", "deinit"]
+- ["8SkrybaMD21TableOfContentPrinterV", "init"]
+- ["8SkrybaMD21TableOfContentPrinterV", "print"]
+- ["8SkrybaMD21TableOfContentPrinterV", "rowFactory"]
+- ["8SkrybaMD22TableOfContentPrintingP", "Node"]
+- ["8SkrybaMD22TableOfContentPrintingP", "String"]
+- ["8SkrybaMD22TableOfContentPrintingP", ""]
+- !private ["8SkrybaMD22TableOfContentPrintingP", "init"]
+- ["8SkrybaMD22TableOfContentPrintingP", "print"]
+- !private ["8SkrybaMD22TableOfContentPrintingP", "rowFactory"]
+- !private ["8SkrybaMD17TableRowFactoringP", "Constant"]
+- !private ["8SkrybaMD17TableRowFactoringP", "ConstantPrivate"]
+- ["8SkrybaMD17TableRowFactoringP", "IntentFactory"]
+- ["8SkrybaMD17TableRowFactoringP", "Node"]
+- ["8SkrybaMD17TableRowFactoringP", "String"]
+- ["8SkrybaMD17TableRowFactoringP", ""]
+- !private ["8SkrybaMD17TableRowFactoringP", "init"]
+- !private ["8SkrybaMD17TableRowFactoringP", "intentFactory"]
+- ["8SkrybaMD17TableRowFactoringP", "make"]
+- !private ["8SkrybaMD21TableRowLinkedFactoryV", "Constant"]
+- !private ["8SkrybaMD21TableRowLinkedFactoryV", "ConstantPrivate"]
+- ["8SkrybaMD21TableRowLinkedFactoryV", "IntentFactory"]
+- ["8SkrybaMD21TableRowLinkedFactoryV", "Node"]
+- ["8SkrybaMD21TableRowLinkedFactoryV", "String"]
+- ["8SkrybaMD21TableRowLinkedFactoryV", "deinit"]
+- ["8SkrybaMD21TableRowLinkedFactoryV", "init"]
+- ["8SkrybaMD21TableRowLinkedFactoryV", "intentFactory"]
+- ["8SkrybaMD21TableRowLinkedFactoryV", "make"]
+- !private ["8SkrybaMD20TableRowPlainFactoryV", "Constant"]
+- ["8SkrybaMD20TableRowPlainFactoryV", "IntentFactory"]
+- ["8SkrybaMD20TableRowPlainFactoryV", "Node"]
+- ["8SkrybaMD20TableRowPlainFactoryV", "String"]
+- ["8SkrybaMD20TableRowPlainFactoryV", "deinit"]
+- ["8SkrybaMD20TableRowPlainFactoryV", "init"]
+- ["8SkrybaMD20TableRowPlainFactoryV", "intentFactory"]
+- ["8SkrybaMD20TableRowPlainFactoryV", "make"]
+- !private ["s16TextOutputStreamP", "Element"]
+- !private ["s16TextOutputStreamP", "Encoding"]
+- ["s16TextOutputStreamP", "SubSequence"]
+- ["s16TextOutputStreamP", "appendInterpolation"]
+- ["s16TextOutputStreamP", "appendLiteral"]
+- !private ["s16TextOutputStreamP", "components"]
+- !private ["s16TextOutputStreamP", "count"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s16TextOutputStreamP", "lowercased"]
+- !private ["s16TextOutputStreamP", "replacingOccurrences"]
+- !private ["s16TextOutputStreamP", "split"]
+- !private ["s16TextOutputStreamP", "trimmingCharacters"]
+- !private ["s16TextOutputStreamP", "write"]
+- !private ["s20TextOutputStreamableP", "Element"]
+- !private ["s20TextOutputStreamableP", "Encoding"]
+- ["s20TextOutputStreamableP", "SubSequence"]
+- !private ["s20TextOutputStreamableP", "components"]
+- !private ["s20TextOutputStreamableP", "count"]
+- !private ["s20TextOutputStreamableP", "init"]
+- !private ["s20TextOutputStreamableP", "lowercased"]
+- !private ["s20TextOutputStreamableP", "replacingOccurrences"]
+- !private ["s20TextOutputStreamableP", "split"]
+- !private ["s20TextOutputStreamableP", "trimmingCharacters"]
+- !private ["s20TextOutputStreamableP", "write"]
+- !private ["s14_ArrayProtocolP", "append"]
+- ["s14_ArrayProtocolP", "count"]
+- !private ["s14_ArrayProtocolP", "first"]
+- !private ["s14_ArrayProtocolP", "forEach"]
+- !private ["s14_ArrayProtocolP", "init"]
+- !private ["s14_ArrayProtocolP", "last"]
+- !private ["s14_ArrayProtocolP", "map"]
+- !private ["s14_ArrayProtocolP", "sorted"]
+- ["s14_ArrayProtocolP", "subscript"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "Element"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "Encoding"]
+- ["s30_CustomPlaygroundQuickLookableP", "SubSequence"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "components"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "count"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "init"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "lowercased"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "replacingOccurrences"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "split"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "trimmingCharacters"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "write"]
+- !private ["s24_DestructorSafeContainerP", "append"]
+- ["s24_DestructorSafeContainerP", "count"]
+- !private ["s24_DestructorSafeContainerP", "first"]
+- !private ["s24_DestructorSafeContainerP", "forEach"]
+- !private ["s24_DestructorSafeContainerP", "init"]
+- !private ["s24_DestructorSafeContainerP", "last"]
+- !private ["s24_DestructorSafeContainerP", "map"]
+- !private ["s24_DestructorSafeContainerP", "sorted"]
+- ["s24_DestructorSafeContainerP", "subscript"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "Element"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "Encoding"]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "SubSequence"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "count"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "lowercased"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "replacingOccurrences"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "split"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "trimmingCharacters"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "write"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "Element"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "Encoding"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "SubSequence"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "count"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "lowercased"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "replacingOccurrences"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "split"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "trimmingCharacters"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "write"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "Element"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "Encoding"]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "SubSequence"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "count"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "lowercased"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "replacingOccurrences"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "split"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "trimmingCharacters"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "write"]
+- !private ["s19_HasContiguousBytesP", "Element"]
+- !private ["s19_HasContiguousBytesP", "Encoding"]
+- ["s19_HasContiguousBytesP", "SubSequence"]
+- !private ["s19_HasContiguousBytesP", "append"]
+- !private ["s19_HasContiguousBytesP", "components"]
+- ["s19_HasContiguousBytesP", "count"]
+- !private ["s19_HasContiguousBytesP", "first"]
+- !private ["s19_HasContiguousBytesP", "forEach"]
+- !private ["s19_HasContiguousBytesP", "init"]
+- !private ["s19_HasContiguousBytesP", "last"]
+- !private ["s19_HasContiguousBytesP", "lowercased"]
+- !private ["s19_HasContiguousBytesP", "map"]
+- !private ["s19_HasContiguousBytesP", "replacingOccurrences"]
+- !private ["s19_HasContiguousBytesP", "sorted"]
+- !private ["s19_HasContiguousBytesP", "split"]
+- ["s19_HasContiguousBytesP", "subscript"]
+- !private ["s19_HasContiguousBytesP", "trimmingCharacters"]
+- !private ["s19_HasContiguousBytesP", "write"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "append"]
+- ["s35_HasCustomAnyHashableRepresentationP", "count"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "first"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "forEach"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "last"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "lowercased"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "map"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "removeValue"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "replacingOccurrences"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "sorted"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "split"]
+- ["s35_HasCustomAnyHashableRepresentationP", "subscript"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "trimmingCharacters"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "write"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "arguments"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "count"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "currentDirectoryPath"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "default"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "launch"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "launchPath"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "lowercased"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "replacingOccurrences"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "split"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "terminationStatus"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "trimmingCharacters"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "waitUntilExit"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "write"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "arguments"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "count"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "currentDirectoryPath"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "default"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "init"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "launch"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "launchPath"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "lowercased"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "replacingOccurrences"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "split"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "terminationStatus"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "trimmingCharacters"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "waitUntilExit"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "write"]
+- !private ["s21_ObjectiveCBridgeableP", "Element"]
+- !private ["s21_ObjectiveCBridgeableP", "Encoding"]
+- ["s21_ObjectiveCBridgeableP", "SubSequence"]
+- !private ["s21_ObjectiveCBridgeableP", "append"]
+- !private ["s21_ObjectiveCBridgeableP", "components"]
+- ["s21_ObjectiveCBridgeableP", "count"]
+- !private ["s21_ObjectiveCBridgeableP", "first"]
+- !private ["s21_ObjectiveCBridgeableP", "forEach"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "last"]
+- !private ["s21_ObjectiveCBridgeableP", "lowercased"]
+- !private ["s21_ObjectiveCBridgeableP", "map"]
+- !private ["s21_ObjectiveCBridgeableP", "removeValue"]
+- !private ["s21_ObjectiveCBridgeableP", "replacingOccurrences"]
+- !private ["s21_ObjectiveCBridgeableP", "sorted"]
+- !private ["s21_ObjectiveCBridgeableP", "split"]
+- ["s21_ObjectiveCBridgeableP", "subscript"]
+- !private ["s21_ObjectiveCBridgeableP", "trimmingCharacters"]
+- !private ["s21_ObjectiveCBridgeableP", "whitespacesAndNewlines"]
+- !private ["s21_ObjectiveCBridgeableP", "write"]
+depends-nominal:
+- "Sa"
+- "SK"
+- "s7CVarArgP"
+- !private "SJ"
+- !private "10Foundation12CharacterSetV"
+- "Sl"
+- "s11CommandLineO"
+- "SL"
+- "8SkrybaMD14ConsolePrinterV"
+- "8SkrybaMD8ConstantO"
+- "10Foundation15ContiguousBytesP"
+- "s28CustomDebugStringConvertibleP"
+- "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- "10Foundation12DataProtocolP"
+- "Se"
+- "s26DefaultStringInterpolationV"
+- !private "SD"
+- "8SkrybaMD3DocV"
+- "8SkrybaMD19DocumentBodyPrinterV"
+- "8SkrybaMD20DocumentBodyPrintingP"
+- "8SkrybaMD22DocumentsOutputEncoderV"
+- "SE"
+- !private "SS10FoundationE8EncodingV"
+- "SQ"
+- "s25ExpressibleByArrayLiteralP"
+- !private "s30ExpressibleByDictionaryLiteralP"
+- "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s23ExpressibleByNilLiteralP"
+- "s32ExpressibleByStringInterpolationP"
+- "s26ExpressibleByStringLiteralP"
+- "s33ExpressibleByUnicodeScalarLiteralP"
+- "8SkrybaMD18FileIORepositoringP"
+- "8SkrybaMD16FileIORepositoryV"
+- "So13NSFileManagerC"
+- "8SkrybaMD11FilePrinterV"
+- "8SkrybaMD9GeneratorV"
+- "SH"
+- "8SkrybaMD6MDSignV6HeaderV"
+- "8SkrybaMD13IntentFactoryV"
+- "8SkrybaMD6MDSignV4ListV"
+- "s25LosslessStringConvertibleP"
+- "8SkrybaMD6MDSignV"
+- "s10MirrorPathP"
+- "SM"
+- "10Foundation19MutableDataProtocolP"
+- !private "So8NSCodingP"
+- !private "So9NSCopyingP"
+- !private "So21NSItemProviderReadingP"
+- !private "So21NSItemProviderWritingP"
+- !private "So16NSMutableCopyingP"
+- "So8NSObjectC"
+- "So8NSObjectP"
+- !private "So14NSSecureCodingP"
+- !private "So8NSStringC"
+- "8SkrybaMD4NodeC"
+- !private "Sq"
+- "8SkrybaMD14OutputPrintingP"
+- !private "So6NSTaskC"
+- "Sk"
+- "Sm"
+- !private "SY"
+- !private "10Foundation20ReferenceConvertibleP"
+- "ST"
+- !private "s10SetAlgebraP"
+- "SS"
+- "s27StringInterpolationProtocolP"
+- "Sy"
+- !private "Ss"
+- "8SkrybaMD21TableOfContentPrinterV"
+- "8SkrybaMD22TableOfContentPrintingP"
+- "8SkrybaMD17TableRowFactoringP"
+- "8SkrybaMD21TableRowLinkedFactoryV"
+- "8SkrybaMD20TableRowPlainFactoryV"
+- "s16TextOutputStreamP"
+- "s20TextOutputStreamableP"
+- "s14_ArrayProtocolP"
+- "s30_CustomPlaygroundQuickLookableP"
+- "s24_DestructorSafeContainerP"
+- "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- "s34_ExpressibleByBuiltinStringLiteralP"
+- "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- "s19_HasContiguousBytesP"
+- "s35_HasCustomAnyHashableRepresentationP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- "10Foundation37_KeyValueCodingAndObservingPublishingP"
+- "s21_ObjectiveCBridgeableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/swift/XPC.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/swift/ObjectiveC.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/swift/Dispatch.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/swift/Darwin.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/swift/Foundation.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/swift/CoreFoundation.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/swift/CoreGraphics.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/swift/Swift.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/swift/IOKit.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/swift/SwiftOnoneSupport.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Combine.framework/Modules/Combine.swiftmodule/x86_64-apple-macos.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/xpc/XPC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/ApplicationServices.framework/Headers/ApplicationServices.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "4510a079789269cd34a9ed2c207fd15d"

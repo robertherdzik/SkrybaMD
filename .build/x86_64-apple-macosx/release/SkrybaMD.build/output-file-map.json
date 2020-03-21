@@ -1,0 +1,12 @@
+{
+  "": {
+    "dependencies": "/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/release/SkrybaMD.build/SkrybaMD.d",
+    "object": "/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/release/SkrybaMD.build/SkrybaMD.o",
+    "swift-dependencies": "/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/release/SkrybaMD.build/master.swiftdeps"
+  },
+  "/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/Sources/SkrybaMD/main.swift": {
+    "object": "/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/release/SkrybaMD.build/main.swift.o",
+    "swiftmodule": "/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/release/SkrybaMD.build/main~partial.swiftmodule",
+    "swift-dependencies": "/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/release/SkrybaMD.build/main.swiftdeps"
+  }
+}

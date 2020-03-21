@@ -1,0 +1,43 @@
+client:
+  name: basic
+tools: {}
+targets:
+  "main": ["/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/debug/SkrybaMD","/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/debug/SkrybaMD.swiftmodule","<SkrybaMD-debug.exe>","<SkrybaMD-debug.module>"]
+  "test": ["/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/debug/SkrybaMD","/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/debug/SkrybaMD.swiftmodule","<SkrybaMD-debug.exe>","<SkrybaMD-debug.module>"]
+  "SkrybaMD-debug.exe": ["/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/debug/SkrybaMD","<SkrybaMD-debug.exe>"]
+  "SkrybaMD-debug.module": ["/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/debug/SkrybaMD.swiftmodule","<SkrybaMD-debug.module>"]
+default: "main"
+commands: 
+  "<C.SkrybaMD-debug.exe>":
+    tool: phony
+    inputs: ["/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/debug/SkrybaMD"]
+    outputs: ["<SkrybaMD-debug.exe>"]
+
+  "<C.SkrybaMD-debug.module>":
+    tool: phony
+    inputs: ["/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/debug/SkrybaMD.swiftmodule"]
+    outputs: ["<SkrybaMD-debug.module>"]
+
+  "C.SkrybaMD-debug.exe":
+    tool: shell
+    description: "Linking ./.build/x86_64-apple-macosx/debug/SkrybaMD"
+    inputs: ["/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/debug/SkrybaMD.build/main.swift.o"]
+    outputs: ["/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/debug/SkrybaMD"]
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-g","-L","/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/debug","-o","/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/debug/SkrybaMD","-module-name","SkrybaMD","-emit-executable","@/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/debug/SkrybaMD.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx","-target","x86_64-apple-macosx10.10","-L","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"]
+
+  "C.SkrybaMD-debug.module":
+    tool: swift-compiler
+    executable: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "SkrybaMD"
+    module-output-path: "/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/debug/SkrybaMD.swiftmodule"
+    inputs: ["/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/Sources/SkrybaMD/main.swift"]
+    outputs: ["/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/debug/SkrybaMD.build/main.swift.o","/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/debug/SkrybaMD.swiftmodule"]
+    import-paths: ["/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/debug"]
+    temps-path: "/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/debug/SkrybaMD.build"
+    objects: ["/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/debug/SkrybaMD.build/main.swift.o"]
+    other-args: ["-target","x86_64-apple-macosx10.10","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/debug/index/store","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Onone","-g","-enable-testing","-j12","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-Xfrontend","-color-diagnostics"]
+    sources: ["/Users/robertherdzik/Documents/Workspace/Git/SkrybaMD/Sources/SkrybaMD/main.swift"]
+    is-library: false
+    enable-whole-module-optimization: false
+    num-threads: "12"
+
