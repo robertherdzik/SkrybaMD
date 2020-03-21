@@ -7,4 +7,7 @@ Simple markdown documentation generator, never again -> git conflicts among the 
 - [ ] create redable README.md file, with installation, how to use, ect...
 - [ ] clean up code, move to separate files, change into classes/structures
 - [x] create .md anchors from table of content to particular documentation place (see: https://gist.github.com/asabaylus/3071099#file-gistfile1-md)
-
+- [ ] Handle special characters in the Table of Content titles like e.g.: `, ~ ... now probably some of them will break linking mechanism
+- [ ] Add "Do not edit directly .md file" footer
+- [ ] Unit Tests
+- [ ] Move Todo to separate .md file
