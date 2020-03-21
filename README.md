@@ -1,4 +1,4 @@
-[![License](https://img.shields.io/cocoapods/l/BadgeSwift.svg?style=flat)](/LICENSE)
+# [![License](https://img.shields.io/cocoapods/l/BadgeSwift.svg?style=flat)](/LICENSE)
 [![Language](http://img.shields.io/badge/language-swift-brightgreen.svg?style=flat)](https://developer.apple.com/swift)
 [![Twitter](https://img.shields.io/twitter/follow/Roherdzik.svg?style=social&label=Follow)](https://twitter.com/Roherdzik)
 
@@ -18,13 +18,14 @@ Simple markdown documentation generator, never again -> git conflicts among the 
 
 # Usage
 
-1. *Define shape of your documentation*
+1. **Define shape of your documentation**
 To do so, you need to create your own `doc_shape.txt` (see and play with Example folder).
 
 Follow convention explained below:
 ![](./ReadmeAssets/shape_structure.png)
 
 _`doc_shape.txt` example:_
+
 ```
 i || General || general.md
 i || Architecture || architecture_config.md
@@ -33,25 +34,27 @@ i || CI and Rest || ci_and_rest.md
 i || Summary || summary.md
 ```
 
-2. *Create files content for each subject*
+2. **Create files content for each subject**
 Create source .md file for each Subject in the same directory as `doc_shape.txt`.
 In the shape example which we see above, it will be e.g. file with the `general.md` name for "General" subject. Base on mentioned `general.md` file, script will create documentation body.
 
-3. *Run Script*
+3. **Run Script**
 Run script using terminal in the directory of previously defined files (`doc_shape.txt` and content subjects .md files). 
 
 `>> SkrybaMD MySuperDocumentation`  - if you have installed SkrybaMD globally 🌍
+
 or
+
 `>> ./SkrybaMD MySuperDocumentation` - if you have SkrybaMD script in the current directory 🏠
 
-
 You will find markdown generated `MySuperDocumentation.md` file in the same directory 💥
+
 ENJOY 🙌
 
 _NOTE: you can play around with script using "Example" folder from this repository_
 
 # Installation
-// _TODO [🌶]:
+`// _TODO [🌶]:`
 
 
 # TODO
