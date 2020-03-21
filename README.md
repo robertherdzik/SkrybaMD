@@ -13,7 +13,7 @@ Therefore, creating of documentation for your project, should not limit you at a
 This simple to use script is intended to be very easy to use and reduce as much as possible git conflicts among the team members interaction with documentation.
 - By separate file for each Table of Content subject we can organize information in small encapsulated .md files.
 - There will be no longer situation that someone won't add another subject in the middle of the documentation, because all subjects iteration is done by the script.
-- You can define as many intentions in the file as you want!
+- You can define as many incision in the file as you want!
 - You can tap into Table of Content subject and you will be redirected to particular place in the documentation file.
 
 # How it works? 
@@ -23,7 +23,8 @@ This simple to use script is intended to be very easy to use and reduce as much 
 ## Features
 - automatic subject enumeration
 - separation of content by using different source .md file for each Section. In this way there will be very small probability to have merge conflicts in the team
-- multiple intent, you can define easily structure which will support e.g. 1.1.1.3 subject intent
+- multiple incisions, you can define easily structure which will support e.g. 1.1.1.3 subject incision
+- Table of Content subject are linked 
 
 # Usage
 

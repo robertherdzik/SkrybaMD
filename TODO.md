@@ -12,3 +12,4 @@
 - [ ] Add "Do not edit directly .md file" footer
 - [ ] Unit Tests
 - [ ] Move Todo to separate .md file
+- [ ] Change misspelling in the code from "intention" to "incision"
