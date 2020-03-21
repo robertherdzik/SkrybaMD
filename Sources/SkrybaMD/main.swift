@@ -56,30 +56,49 @@ struct Doc {
 
 protocol FileIORepositoring {
     func fetchDocumentShape() -> String
-    func fetchFileContent(from fileName: String) -> String
+    func fetchFileContent(from fileName: String) -> String?
     func saveDocumentationOutputFile(with content: String, documentName: String?)
+    func createEmptyFile(with fileName: String?)
 }
 
 struct FileIORepository: FileIORepositoring {
+    struct ConstantPrivate {
+        static let mdFileExtension = ".md"
+    }
     private let fileManager = FileManager.default
     
     func fetchDocumentShape() -> String {
-        let docShape = fetchFileContent(from: "doc_shape.txt")
+        guard let docShape = fetchFileContent(from: "doc_shape.txt") else {
+            fatalError("🧨 doc_shape.txt file not found!")
+        }
         
         printProcessLogs(with: "Processing following doc shape: \(Constant.newLine)\(Constant.newLine)\(docShape)")
         
         return docShape
     }
     
-    func fetchFileContent(from fileName: String) -> String {
+    
+    /// Metod return file content if exist
+    /// - Parameter fileName: file name
+    func fetchFileContent(from fileName: String) -> String? {
         let path = fileManager.currentDirectoryPath + "/" + fileName
-        // _TODO [🌶]: add exception catch if there is no file, and remove force unwrap
-        return try! String(contentsOfFile: path, encoding: String.Encoding.utf8)
+        
+        return try? String(contentsOfFile: path, encoding: String.Encoding.utf8)
+    }
+    
+    func createEmptyFile(with fileName: String?) {
+        guard let fileName = fileName,
+            fileName.count > 0 else { return }
+        
+        let path = fileManager.currentDirectoryPath + "/" + fileName
+        
+        try! "".write(toFile: path, atomically: true, encoding: .utf8)
+        printProcessLogs(with: Constant.tab + "🥳 empty \(fileName) created")
     }
     
     func saveDocumentationOutputFile(with content: String, documentName: String?) {
         let fileName = documentName ?? "StyleGuide"
-        let path = fileManager.currentDirectoryPath + "/" + fileName + ".md"
+        let path = fileManager.currentDirectoryPath + "/" + fileName + ConstantPrivate.mdFileExtension
         
         printProcessLogs(with: "Documentation generated and saved at: \(Constant.newLine)🦠 ➡️ \(path)")
         
@@ -286,14 +305,19 @@ struct Generator {
         let intent = rowElements.first!.trimmingCharacters(in: .whitespacesAndNewlines)
         let title = rowElements[1].trimmingCharacters(in: .whitespacesAndNewlines)
         
-        var contentFileValue: String!
+        var contentFileValue: String?
         if let contentFile = rowElements.last?.trimmingCharacters(in: .whitespacesAndNewlines) {
             contentFileValue = fileRepository.fetchFileContent(from: contentFile)
+            
+            // _TODO [🌶]: this functionality of creating empty file should be in other place
+            if contentFileValue == nil {
+                fileRepository.createEmptyFile(with: contentFile)
+            }
         }
         
         return Node(intent: intent,
                     title: title,
-                    content: contentFileValue)
+                    content: contentFileValue ?? "")
     }
     
     private func getClosestPrevSiblingNode(from node: Node?, with intent: Int) -> Node? {
