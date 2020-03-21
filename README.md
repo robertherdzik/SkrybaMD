@@ -65,7 +65,7 @@ ENJOY 🙌
 
 _NOTE: you can play around with script using "Example" folder from this repository_
 
-**Check help**
+## Check help
 
 If you are not sure how to use it, go and hit `--help` to get verbose instructions
 
