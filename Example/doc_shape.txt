@@ -1,10 +1,5 @@
 i || General || general.md
-ii || ddd || general.md
 i || Architecture || architecture_config.md
 ii || Our Approach || our_approach.md
-iii || next point || our_approach.md
-iii || dfsdf || our_approach.md
-iiii || Our Approach Description || our_approach_description.md
-iiii || Why This One || why_this_one.md
-iiii || CI and Rest || ci_and_rest.md
+i || CI and Rest || ci_and_rest.md
 i || Summary || summary.md

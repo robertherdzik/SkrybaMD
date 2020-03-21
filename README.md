@@ -1,5 +1,13 @@
+[![License](https://img.shields.io/cocoapods/l/BadgeSwift.svg?style=flat)](/LICENSE)
+[![Language](http://img.shields.io/badge/language-swift-brightgreen.svg?style=flat)](https://developer.apple.com/swift)
+[![Twitter](https://img.shields.io/twitter/follow/Roherdzik.svg?style=social&label=Follow)](https://twitter.com/Roherdzik)
+
 # SkrybaMD 📝
 Simple markdown documentation generator, never again -> git conflicts among the team members which are updating documentation at the same time 💥
+
+# How it works? 
+
+![](./ReadmeAssets/SkrybaMD_flow.png)
 
 # TODO
 - [x] create script installation logic (now script need to be build from xcode and copy/paste in the place where source files are located)
