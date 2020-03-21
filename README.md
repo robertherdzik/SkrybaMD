@@ -19,6 +19,7 @@ Simple markdown documentation generator, never again -> git conflicts among the 
 # Usage
 
 1. **Define shape of your documentation**
+
 To do so, you need to create your own `doc_shape.txt` (see and play with Example folder).
 
 Follow convention explained below:
@@ -35,10 +36,12 @@ i || Summary || summary.md
 ```
 
 2. **Create files content for each subject**
+
 Create source .md file for each Subject in the same directory as `doc_shape.txt`.
 In the shape example which we see above, it will be e.g. file with the `general.md` name for "General" subject. Base on mentioned `general.md` file, script will create documentation body.
 
 3. **Run Script**
+
 Run script using terminal in the directory of previously defined files (`doc_shape.txt` and content subjects .md files). 
 
 `>> SkrybaMD MySuperDocumentation`  - if you have installed SkrybaMD globally 🌍
