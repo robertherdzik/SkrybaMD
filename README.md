@@ -7,12 +7,12 @@ Simple markdown documentation generator, never again -> git conflicts among the 
 
 # Motivation to create SkrybaMD
 
-We all know that in big teams we have a lot of agreements which needs to be stored somewhere (for newcomers and also for current developers), this script will help you to do this, create your SwiftStyleGuide.md or ArchitectureDescription.md documentation in easy to maintain way 🚀
+We all know that in big teams we have a lot of agreements, which needs to be stored somewhere (for newcomers and also for current developers), this script will help you to do this, create your SwiftStyleGuide.md, ArchitectureDescription.md etc. documentation in easy to maintain way 🚀
 
 Therefore, creating of documentation for your project, should not limit you at all! Maintaining and editing documentation needs to be easy as it is possible, also we should minimalise situation when multiple team members are manually editing main documentation file, it leads us only towards problems (git conflicts), and in result slow us down 🛩.
-This simple to use script is intended to be very easy to use and reduce as much as possible git conflicts among the team members interaction with documentation.
-- By separate file for each Table of Content subject we can organize information in small encapsulated .md files.
-- There will be no longer situation that someone won't add another subject in the middle of the documentation, because all subjects iteration is done by the script.
+This script is intended to be very easy to use and reduce as much as possible git conflicts among the team members interaction with documentation.
+- By separate file for each Table of Content subject, we can organize information in small encapsulated .md files.
+- There will be no longer situation that someone will hesitate to add another subject in the middle of the documentation (due to manual changing numeration of the subject after his insertion), because all subjects iteration are done by the script.
 - You can define as many incision in the file as you want!
 - You can tap into Table of Content subject and you will be redirected to particular place in the documentation file.
 
