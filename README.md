@@ -33,6 +33,7 @@ This script is intended to be very easy to use and reduce as much as possible gi
 To do so, you need to create your own `doc_shape.txt` (see and play with Example folder).
 
 Follow convention explained below:
+
 ![](./ReadmeAssets/shape_structure.png)
 
 _`doc_shape.txt` example:_
