@@ -11,5 +11,5 @@
 - [ ] Handle special characters in the Table of Content titles like e.g.: `, ~ ... now probably some of them will break linking mechanism
 - [ ] Add "Do not edit directly .md file" footer
 - [ ] Unit Tests
-- [ ] Move Todo to separate .md file
+- [x] Move Todo to separate .md file
 - [ ] Change misspelling in the code from "intention" to "incision"
