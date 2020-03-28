@@ -1,5 +1,5 @@
 <p align="center">
-<img src ="./ReadmeAssets/skrybaMD.png"/ height="180">
+<img src ="./ReadmeAssets/skrybaMD.png"/ style="max-height: 100px; width: auto; ">
 </p>
 
 [![License](https://img.shields.io/cocoapods/l/BadgeSwift.svg?style=flat)](/LICENSE)
