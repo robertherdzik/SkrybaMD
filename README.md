@@ -50,7 +50,7 @@ i || CI and Rest || ci_and_rest.md
 i || Summary || summary.md
 ```
 
-***NOTE*** You can skip subject content file source neme in `doc_shape.txt` file, in result you will get only subject without content in the output file e.g.:
+***NOTE*** You can skip subject content file source name in `doc_shape.txt` file, in result you will get only subject without content in the output file e.g.:
 
 `i || General ||`
 
