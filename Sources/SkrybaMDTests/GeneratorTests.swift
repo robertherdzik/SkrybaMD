@@ -103,7 +103,7 @@ class GeneratorTests: XCTestCase {
     func testMakeNodesLinkedList_WhenInnerNodeHasParent() {
         let input = """
         i || General ||
-        ii || General _ inner ||
+        
 
         """
         
