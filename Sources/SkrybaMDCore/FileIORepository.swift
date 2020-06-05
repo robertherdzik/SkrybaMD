@@ -49,10 +49,10 @@ public struct FileIORepository: FileIORepositoring {
         if let path = path {
             customPath = "/"
             + path
-            + "/"
         }
         let path = fileManager.currentDirectoryPath
             + customPath
+            + "/"
             + fileName
             + ConstantPrivate.mdFileExtension
         

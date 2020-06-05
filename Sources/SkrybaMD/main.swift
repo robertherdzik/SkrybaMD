@@ -48,6 +48,7 @@ protocol ActionEffectable {
     func run(value: String?)
 }
 
+// _TODO [🌶]: update install
 struct InstallationEffect: ActionEffectable {
     func run(value: String?) {
         print("Installing script globally 🌍...")
@@ -57,6 +58,7 @@ struct InstallationEffect: ActionEffectable {
     }
 }
 
+// _TODO [🌶]: update help
 struct HelpEffect: ActionEffectable {
     func run(value: String?) {
         let instruction = """
@@ -78,16 +80,18 @@ struct OutputEffect: ActionEffectable {
         let path = elements.dropLast().joined(separator: "/")
             
         generate(fileName: String(fileName), path: path)
-//        path: // _TODO [🌶]:)
     }
 }
 
-
-/// This effect is taking argument, and create output file according to this argument
-/// NOTE: we assume that as a argument user will pass file name
-struct UndefinedEffect: ActionEffectable {
+struct GenerateFileWithoutPathEffect: ActionEffectable {
     func run(value: String?) {
         generate(fileName: value)
+    }
+}
+
+struct UndefinedEffect: ActionEffectable {
+    func run(value: String?) {
+        print("🆇 Command not supported: \(String(describing: value))")
     }
 }
 
@@ -138,12 +142,25 @@ let productName = "SkrybaMD"
 
 // >> $ ./SkrybaMD StyleGuide.md
 func runScript() {
-    let argument = arguments[1]
-    let value = arguments[2]
+    switch arguments.count {
+    case 1:
+        GenerateFileWithoutPathEffect()
+            .run(value: nil)
+    case 2:
+        let fileName = arguments[1]
+        GenerateFileWithoutPathEffect()
+            .run(value: fileName)
+    case 3:
+        let argument = arguments[1]
+        let value = arguments[2]
+        
+        Argument(argument: argument)
+            .effect()?
+            .run(value: value)
+    default:
+        break
+    }
     
-    Argument(argument: argument)
-        .effect()?
-        .run(value: value)
 }
 
 runScript()
