@@ -45,11 +45,11 @@ func generate(fileName: String?,
 //------------------------------------------------
 
 protocol ActionEffectable {
-    func run()
+    func run(value: String?)
 }
 
 struct InstallationEffect: ActionEffectable {
-    func run() {
+    func run(value: String?) {
         print("Installing script globally 🌍...")
         print("Now you can use script \(productName) from everywhere 🚀")
         print("Run \"\(productName) --help\" to get more info 🙇‍♂️")
@@ -58,7 +58,7 @@ struct InstallationEffect: ActionEffectable {
 }
 
 struct HelpEffect: ActionEffectable {
-    func run() {
+    func run(value: String?) {
         let instruction = """
         ⏬ To install globally run: ./\(productName) --install
         USAGE:
@@ -70,15 +70,14 @@ struct HelpEffect: ActionEffectable {
 }
 
 struct OutputEffect: ActionEffectable {
-    private let path: String
-    
-    init(path: String) {
-        self.path = path
-    }
-    
-    func run() {
-        print(path)
-//        generate(fileName: argument,
+    func run(value: String?) {
+        guard let value = value else { return }
+        
+        let elements = value.split(separator: "/")
+        let fileName = elements.last!
+        let path = elements.dropLast().joined(separator: "/")
+            
+        generate(fileName: String(fileName), path: path)
 //        path: // _TODO [🌶]:)
     }
 }
@@ -87,14 +86,8 @@ struct OutputEffect: ActionEffectable {
 /// This effect is taking argument, and create output file according to this argument
 /// NOTE: we assume that as a argument user will pass file name
 struct UndefinedEffect: ActionEffectable {
-    private let argument: String
-    
-    init(argument: String) {
-        self.argument = argument
-    }
-    
-    func run() {
-        generate(fileName: argument)
+    func run(value: String?) {
+        generate(fileName: value)
     }
 }
 
@@ -109,8 +102,8 @@ enum Argument {
     
     case installation
     case help
-    case outputPath(_ path: String)
-    case undefined(_ argument: String) // _TODO [🌶]: maybe is not good idea to pass raw argumnt and handle it as a file name
+    case outputPath
+    case undefined
     
     init(argument: String) {
         switch argument {
@@ -119,14 +112,10 @@ enum Argument {
         case Constant.help,
              Constant.helpShort:
             self = .help
-        case Constant.output:
-            let path = argument.replacingOccurrences(of: Constant.output + " ", with: "")
-            self = .outputPath(path)
-        case Constant.outputShort:
-            let path = argument.replacingOccurrences(of: Constant.outputShort + " ", with: "")
-            self = .outputPath(path)
+        case Constant.output, Constant.outputShort:
+            self = .outputPath
         default:
-            self = .undefined(argument)
+            self = .undefined
         }
     }
     
@@ -136,10 +125,10 @@ enum Argument {
             return InstallationEffect()
         case .help:
             return HelpEffect()
-        case let .outputPath(path):
-            return OutputEffect(path: path)
-        case let .undefined(argument):
-            return UndefinedEffect(argument: argument)
+        case .outputPath:
+            return OutputEffect()
+        case .undefined:
+            return UndefinedEffect()
         }
     }
 }
@@ -149,14 +138,12 @@ let productName = "SkrybaMD"
 
 // >> $ ./SkrybaMD StyleGuide.md
 func runScript() {
-    guard let argumet = arguments.first else {
-        generate(fileName: nil)
-        return
-    }
+    let argument = arguments[1]
+    let value = arguments[2]
     
-    Argument(argument: argumet)
+    Argument(argument: argument)
         .effect()?
-        .run()
+        .run(value: value)
 }
 
 runScript()
