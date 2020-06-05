@@ -20,7 +20,6 @@ class GeneratorTests: XCTestCase {
     func testMakeNodesLinkedList_WhenSingleNode_ShouldNotHaveParent() {
         let input = """
         i || General ||
-
         """
         
         let rootNode = sut.makeNodesLinkedList(from: input)
@@ -31,7 +30,6 @@ class GeneratorTests: XCTestCase {
     func testMakeNodesLinkedList_WhenSingleNode_ShouldNotHaveNextSibling() {
         let input = """
         i || General ||
-
         """
         
         let rootNode = sut.makeNodesLinkedList(from: input)
@@ -42,7 +40,6 @@ class GeneratorTests: XCTestCase {
     func testMakeNodesLinkedList_WhenSingleNode_ShouldNotHaveInnerNode() {
         let input = """
         i || General ||
-
         """
         
         let rootNode = sut.makeNodesLinkedList(from: input)
@@ -54,7 +51,6 @@ class GeneratorTests: XCTestCase {
         let input = """
         i || General ||
         i || General_Sibling ||
-
         """
         
         let rootNode = sut.makeNodesLinkedList(from: input)
@@ -66,7 +62,6 @@ class GeneratorTests: XCTestCase {
         let input = """
         i || General ||
         i || General_Sibling ||
-
         """
         
         let rootNode = sut.makeNodesLinkedList(from: input)
@@ -79,7 +74,6 @@ class GeneratorTests: XCTestCase {
         let input = """
         i || General ||
         i || General _ sibling ||
-
         """
         
         let rootNode = sut.makeNodesLinkedList(from: input)
@@ -91,7 +85,6 @@ class GeneratorTests: XCTestCase {
         let input = """
         i || General ||
         ii || General _ inner ||
-
         """
         
         let rootNode = sut.makeNodesLinkedList(from: input)
@@ -103,8 +96,7 @@ class GeneratorTests: XCTestCase {
     func testMakeNodesLinkedList_WhenInnerNodeHasParent() {
         let input = """
         i || General ||
-        ii || General _ inner ||
-
+        ii || General _ inner |
         """
         
         let rootNode = sut.makeNodesLinkedList(from: input)
@@ -120,7 +112,6 @@ class GeneratorTests: XCTestCase {
         i || General ||
         ii || General _ inner ||
         ii || General _ inner _ sibling ||
-
         """
         
         let rootNode = sut.makeNodesLinkedList(from: input)
@@ -132,7 +123,6 @@ class GeneratorTests: XCTestCase {
     func testMakeNodesLinkedList_WhenSingleNode_ShouldHaveFirstIndex() {
         let input = """
         i || General ||
-
         """
         
         let rootNode = sut.makeNodesLinkedList(from: input)
@@ -144,7 +134,6 @@ class GeneratorTests: XCTestCase {
         let input = """
         i || General ||
         i || Second ||
-
         """
         
         let rootNode = sut.makeNodesLinkedList(from: input)
@@ -156,7 +145,6 @@ class GeneratorTests: XCTestCase {
         let input = """
         i || General ||
         ii || Second inner ||
-
         """
         
         let rootNode = sut.makeNodesLinkedList(from: input)
@@ -169,7 +157,6 @@ class GeneratorTests: XCTestCase {
         i || General ||
         ii || Second inner ||
         ii || Third inner  ||
-
         """
         
         let rootNode = sut.makeNodesLinkedList(from: input)
@@ -240,7 +227,6 @@ class GeneratorTests: XCTestCase {
             iii || Our Approach || our_approach.md
             ii || CI and Rest || ci_and_rest.md
             i || Summary || summary.md
-
             """
             let fileRepositoryMock = FileIORepositoringMock()
             
