@@ -135,7 +135,7 @@ enum Argument {
         case .help:
             return HelpEffect()
         case let .outputPath(path):
-           return OutputEffect(path: path)
+            return OutputEffect(path: path)
         case let .undefined(argument):
             return UndefinedEffect(argument: argument)
         }
