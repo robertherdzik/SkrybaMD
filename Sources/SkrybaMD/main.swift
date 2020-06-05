@@ -19,7 +19,8 @@ func shell(_ args: String...) -> Int32 {
 import Foundation
 import SkrybaMDCore
 
-func generate(fileName: String?) {
+func generate(fileName: String?,
+              path: String? = nil) {
     let tableOfContentPrinter = TableOfContentPrinter(rowFactory: TableRowLinkedFactory())
     let documentBodyPrinter = DocumentBodyPrinter()
     let generator = Generator(tableOfContentPrinter: tableOfContentPrinter,
@@ -35,7 +36,9 @@ func generate(fileName: String?) {
                        content: content)
     
     DocumentsOutputEncoder.encode(doc: document) { encodedContent in
-        FilePrinter.printOutput(content: encodedContent, documentName: fileName)
+        FilePrinter.printOutput(content: encodedContent,
+                                documentName: fileName,
+                                path: path)
     }
 }
 
@@ -74,10 +77,9 @@ struct OutputEffect: ActionEffectable {
     }
     
     func run() {
-        let instruction = """
-                   // _TODO [🌶]:
-                   """
         print(path)
+//        generate(fileName: argument,
+//        path: // _TODO [🌶]:)
     }
 }
 

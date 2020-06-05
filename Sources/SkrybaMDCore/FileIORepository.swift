@@ -37,9 +37,15 @@ public struct FileIORepository: FileIORepositoring {
         printProcessLogs(with: Constant.tab + "🥳 empty \(fileName) created")
     }
     
-    public func saveDocumentationOutputFile(with content: String, documentName: String?) {
+    public func saveDocumentationOutputFile(with content: String,
+                                            documentName: String?,
+                                            path: String?) {
         let fileName = documentName ?? "StyleGuide"
-        let path = fileManager.currentDirectoryPath + "/" + fileName + ConstantPrivate.mdFileExtension
+        let path = fileManager.currentDirectoryPath
+            + (path ?? "")
+            + "/"
+            + fileName
+            + ConstantPrivate.mdFileExtension
         
         printProcessLogs(with: "Documentation generated and saved at: \(Constant.newLine)🦠 ➡️ \(path)")
         
