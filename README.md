@@ -94,8 +94,7 @@ Using Swift Package Manager
 ```
 $ git clone https://github.com/robertherdzik/SkrybaMD.git
 $ cd SkrybaMD
-$ swift build -c release
-$ cp -f .build/release/SkrybaMD /usr/local/bin/SkrybaMD
+$ make install
 ```
 
 # Contribution
