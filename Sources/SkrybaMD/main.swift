@@ -48,24 +48,26 @@ protocol ActionEffectable {
     func run(value: String?)
 }
 
-// _TODO [🌶]: update install
-struct InstallationEffect: ActionEffectable {
-    func run(value: String?) {
-        print("Installing script globally 🌍...")
-        print("Now you can use script \(productName) from everywhere 🚀")
-        print("Run \"\(productName) --help\" to get more info 🙇‍♂️")
-        shell("cp", "-f", "./\(productName)", "/usr/local/bin/\(productName)")
-    }
-}
-
-// _TODO [🌶]: update help
 struct HelpEffect: ActionEffectable {
     func run(value: String?) {
         let instruction = """
-        ⏬ To install globally run: ./\(productName) --install
+        ------------------------------------------------
+        
         USAGE:
-        📝 Run script and file name as a first parameter e.g.: >> $ ./\(productName) StyleGuide.md
+        📝 Run script and file name as a first parameter e.g.:
+        
+        >> $ \(productName) StyleGuideDoc
         NOTE: If you don't specify output file name, script will use default one.
+        
+        [--output | -o] - Define output relative path, with file name
+        >> $ \(productName) -o /MyDocumentations/StyleGuideDoc
+        
+        [--help | -h] - See help
+        >> $ \(productName) -h
+
+        ------------------------------------------------
+        
+        See more details here: https://github.com/robertherdzik/SkrybaMD
         """
         print(instruction)
     }
@@ -73,13 +75,23 @@ struct HelpEffect: ActionEffectable {
 
 struct OutputEffect: ActionEffectable {
     func run(value: String?) {
-        guard let value = value else { return }
+        guard let value = value else {
+            makeError()
+            return
+        }
         
         let elements = value.split(separator: "/")
         let fileName = elements.last!
         let path = elements.dropLast().joined(separator: "/")
             
         generate(fileName: String(fileName), path: path)
+    }
+    
+    private func makeError() {
+        let instruction = """
+        😬 relative path to the output file is missing...
+        """
+        print(instruction)
     }
 }
 
@@ -90,49 +102,49 @@ struct GenerateFileWithoutPathEffect: ActionEffectable {
 }
 
 struct UndefinedEffect: ActionEffectable {
+    private let argument: String
+    init(argument: String) {
+        self.argument = argument
+    }
+    
     func run(value: String?) {
-        print("🆇 Command not supported: \(String(describing: value))")
+        GenerateFileWithoutPathEffect()
+            .run(value: argument)
     }
 }
 
 enum Argument {
     private enum Constant {
-        static let install = "--install"
         static let help = "--help"
         static let helpShort = "-h"
         static let output = "--output"
         static let outputShort = "-o"
     }
     
-    case installation
     case help
     case outputPath
-    case undefined
+    case undefined(_ argument: String)
     
     init(argument: String) {
         switch argument {
-        case Constant.install:
-            self = .installation
         case Constant.help,
              Constant.helpShort:
             self = .help
         case Constant.output, Constant.outputShort:
             self = .outputPath
         default:
-            self = .undefined
+            self = .undefined(argument)
         }
     }
     
     func effect() -> ActionEffectable? {
         switch self {
-        case .installation:
-            return InstallationEffect()
         case .help:
             return HelpEffect()
         case .outputPath:
             return OutputEffect()
-        case .undefined:
-            return UndefinedEffect()
+        case let .undefined(argument):
+            return UndefinedEffect(argument: argument)
         }
     }
 }
@@ -147,12 +159,15 @@ func runScript() {
         GenerateFileWithoutPathEffect()
             .run(value: nil)
     case 2:
-        let fileName = arguments[1]
-        GenerateFileWithoutPathEffect()
-            .run(value: fileName)
+        let argument = arguments[1]
+        let value = arguments[safe: 2]
+        
+        Argument(argument: argument)
+            .effect()?
+            .run(value: value)
     case 3:
         let argument = arguments[1]
-        let value = arguments[2]
+        let value = arguments[safe: 2]
         
         Argument(argument: argument)
             .effect()?
@@ -164,3 +179,14 @@ func runScript() {
 }
 
 runScript()
+
+// _TODO [🌶]: move to helpers
+extension Array {
+    public subscript(safe x: Int) -> Element? {
+        if self.count > x {
+            return self[x]
+        }
+        
+        return nil
+    }
+}
