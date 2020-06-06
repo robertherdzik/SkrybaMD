@@ -22,6 +22,10 @@ public struct FileIORepository: FileIORepositoring {
     /// Metod return file content if exist
     /// - Parameter fileName: file name
     public func fetchFileContent(from fileName: String) -> String? {
+        if isDebug() {
+            return "i || General || general.md " // _TODO [🌶]: remove debug setup from prod code
+        }
+        
         let path = fileManager.currentDirectoryPath + "/" + fileName
         
         return try? String(contentsOfFile: path, encoding: String.Encoding.utf8)
@@ -37,13 +41,28 @@ public struct FileIORepository: FileIORepositoring {
         printProcessLogs(with: Constant.tab + "🥳 empty \(fileName) created")
     }
     
-    public func saveDocumentationOutputFile(with content: String, documentName: String?) {
+    public func saveDocumentationOutputFile(with content: String,
+                                            documentName: String?,
+                                            path: String?) {
         let fileName = documentName ?? "StyleGuide"
-        let path = fileManager.currentDirectoryPath + "/" + fileName + ConstantPrivate.mdFileExtension
+        var customPath = ""
+        if let path = path {
+            customPath = "/"
+            + path
+        }
+        let path = fileManager.currentDirectoryPath
+            + customPath
+            + "/"
+            + fileName
+            + ConstantPrivate.mdFileExtension
         
         printProcessLogs(with: "Documentation generated and saved at: \(Constant.newLine)🦠 ➡️ \(path)")
         
-        try! content.write(toFile: path, atomically: true, encoding: .utf8)
+        if isDebug() {
+            print("DEBUG: ❤️ " + content)
+        } else {
+            try! content.write(toFile: path, atomically: true, encoding: .utf8)
+        }
     }
     
     private func printProcessLogs(with content: String) {
@@ -51,4 +70,11 @@ public struct FileIORepository: FileIORepositoring {
     }
 }
 
-
+// _TODO [🌶]: move to utils
+func isDebug() -> Bool {
+    if let value = ProcessInfo.processInfo.environment["DEBUG"],
+        value == "1"  {
+        return true
+    }
+    return false
+}
