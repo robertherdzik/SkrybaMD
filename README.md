@@ -76,7 +76,7 @@ You will find markdown generated `MySuperDocumentation.md` file in the same dire
 ### Define custom relative path for output file
 Skryba by default is taking the same directory for creating output file as `doc_shape.txt` has, but you can specify your own path for the outpuf using `-o` option (see `--help` for more info).
 
-`$ SkrybaMD ../Documentations/MySuperDocumentation` 
+`$ SkrybaMD -o ../Documentations/MySuperDocumentation` 
 
 ENJOY 🙌
 
