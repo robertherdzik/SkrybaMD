@@ -1,0 +1,1 @@
+let productName = "SkrybaMD"
