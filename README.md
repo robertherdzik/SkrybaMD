@@ -90,8 +90,13 @@ If you are not sure how to use it, go and hit `--help` to get verbose instructio
 
 # Installation
 
-Using Swift Package Manager
+### Using [Homebrew](http://brew.sh/)
+```sh
+$ brew install robertherdzik/homebrew-SkrybaMD/SkrybaMD
 ```
+
+### Compiling from source
+```sh
 $ git clone https://github.com/robertherdzik/SkrybaMD.git
 $ cd SkrybaMD
 $ make install
