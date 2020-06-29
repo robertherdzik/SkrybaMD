@@ -255,7 +255,7 @@ class GeneratorTests: XCTestCase {
 
             ####  2.1.1.0 Our Approach
 
-            ####  2.2.0 CI and Rest
+            ###  2.2.0 CI and Rest
 
             ##  3.0 Summary
 
@@ -263,4 +263,49 @@ class GeneratorTests: XCTestCase {
         
             XCTAssertEqual(expectedDocumentShape, document.content)
         }
+    
+    func testMarkdownOutputCliff() {
+           let documentShape = """
+           i || General ||
+           i || Architecture || architecture_config.md
+           ii || Our Approach || our_approach.md
+           iii || Our Approach || our_approach.md
+           iiii || CI and Rest || ci_and_rest.md
+           i || Summary || summary.md
+           """
+           let fileRepositoryMock = FileIORepositoringMock()
+           
+           let tableOfContentPrinter = TableOfContentPrinter(rowFactory: TableRowLinkedFactory())
+           let documentBodyPrinter = DocumentBodyPrinter()
+           let sut = Generator(fileRepository: fileRepositoryMock,
+                               tableOfContentPrinter: tableOfContentPrinter,
+                               documentBodyPrinter: documentBodyPrinter)
+           
+           let rootNode = sut.makeNodesLinkedList(from: documentShape)
+           let head = Node(intent: "", title: "", content: "")
+           head.nextSiblingNode = rootNode
+
+           let tableOfContent = sut.printTitles(from: head, base: "")
+           let content = sut.printContent(from: head, base: "")
+           let document = Doc(tableOfContent: tableOfContent,
+                              content: content)
+           
+           let expectedDocumentShape = """
+           
+           ##  1.0 General
+
+           ##  2.0 Architecture
+
+           ###  2.1.0 Our Approach
+
+           ####  2.1.1.0 Our Approach
+
+           ####  2.1.1.1.0 CI and Rest
+
+           ##  3.0 Summary
+
+           """
+       
+           XCTAssertEqual(expectedDocumentShape, document.content)
+       }
 }
