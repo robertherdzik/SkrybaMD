@@ -6,11 +6,11 @@ public struct DocumentBodyPrinter: DocumentBodyPrinting {
     
     public func print(from node: Node, base: String) -> String {
         func templateFactory(node: Node,
-                             stertItem: String,
+                             startItem: String,
                              isInnerNode: Bool) -> String {
             Constant.newLine
                 + generateIntentForContent(baseOn: node.intentCount(), isInnerNode: isInnerNode)
-                + stertItem
+                + startItem
                 + Constant.space
                 + node.index
                 + Constant.space
@@ -21,23 +21,32 @@ public struct DocumentBodyPrinter: DocumentBodyPrinting {
         }
         
         if let innerNode = node.innerNode {
-            let stertItem = innerNode.intentCount() == 2 ? MDSign.Header.small : MDSign.List.sign
-            
             return templateFactory(node: innerNode,
-                                   stertItem: stertItem,
+                                   startItem: make(intentCount: innerNode.intentCount()),
                                    isInnerNode: true)
         }
         
         if let next = node.nextSiblingNode {
             let isRootOfNodes = next.intentCount() == 1
-            let stertItem = isRootOfNodes ? MDSign.Header.big : MDSign.List.sign
+            let stertItem = make(intentCount: next.intentCount())
             
             return templateFactory(node: next,
-                                   stertItem: stertItem,
+                                   startItem: stertItem,
                                    isInnerNode: !isRootOfNodes)
         }
         
         return ""
+    }
+    
+    private func make(intentCount: Int) -> String {
+        switch intentCount {
+        case 1:
+            return MDSign.Header.big
+        case 2:
+            return MDSign.Header.small
+        default:
+            return MDSign.List.sign
+        }
     }
     
     private func generateIntentForContent(baseOn index: Int, isInnerNode: Bool) -> String {

@@ -1,5 +1,6 @@
 i || General ||
 i || Architecture || architecture_config.md
 ii || Our Approach || our_approach.md
-i || CI and Rest || ci_and_rest.md
-i || Summary || summary.md
+iii || CI and Rest || ci_and_rest.md
+iiii || Summary || summary.md
+ii || Summary || summary.md
