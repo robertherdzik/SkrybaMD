@@ -9,14 +9,25 @@ let package = Package(
         .executable(name: "SkrybaMD", targets: ["SkrybaMD"]),
         .library(name: "SkrybaMDCore", targets: ["SkrybaMDCore"])
     ],
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-argument-parser", from: "0.0.4")
+    ],
     targets: [
         .target(name: "SkrybaMD",
-                dependencies: ["SkrybaMDCore"]),
+                dependencies: [
+                    "SkrybaMDCore",
+                    .product(name: "ArgumentParser", package: "swift-argument-parser")
+            ]
+        ),
         .target(
             name: "SkrybaMDCore",
-            dependencies: []
+            dependencies: [
+                .product(name: "ArgumentParser", package: "swift-argument-parser")
+            ]
         ),
         .testTarget(name: "SkrybaMDTests",
-                    dependencies: ["SkrybaMDCore"]),
+                    dependencies: [
+                        "SkrybaMDCore"
+        ]),
     ]
 )
