@@ -8,5 +8,4 @@
 
 import SkrybaMDCore
 
-let arguments = CommandLine.arguments
-ArgumentInterpreter.run(with: arguments)
+SkrybaMD.main()
