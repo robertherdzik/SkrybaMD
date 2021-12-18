@@ -65,18 +65,18 @@ In the shape example which we see above, it will be e.g. file with the `general.
 ### Base
 Run script using terminal in the directory of previously defined files (`doc_shape.txt` and content subjects .md files). 
 
-`$ SkrybaMD MySuperDocumentation`  - if you have installed SkrybaMD globally 🌍
+`$ SkrybaMD generate MySuperDocumentation`  - if you have installed SkrybaMD globally 🌍
 
 or
 
-`$ ./SkrybaMD MySuperDocumentation` - if you have SkrybaMD script in the current directory 🏠
+`$ ./SkrybaMD generate MySuperDocumentation` - if you have SkrybaMD script in the current directory 🏠
 
 You will find markdown generated `MySuperDocumentation.md` file in the same directory 💥
 
 ### Define custom relative path for output file
 Skryba by default is taking the same directory for creating output file as `doc_shape.txt` has, but you can specify your own path for the outpuf using `-o` option (see `--help` for more info).
 
-`$ SkrybaMD -o ../Documentations/MySuperDocumentation` 
+`$ SkrybaMD output --path ./Documentations/MySuperDocumentation` 
 
 ENJOY 🙌
 
